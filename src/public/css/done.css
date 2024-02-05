@@ -1,0 +1,51 @@
+main{
+    margin-top:50px;
+}
+
+.done__content {
+    margin: 0 auto;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.done__text {
+    margin: 0 auto;
+    height: 100px;
+    width: 400px;
+    background-color:#fff;
+    color:black;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px 5px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;    
+}
+
+.done__form {
+    margin: 0 auto;
+    height: 150px;
+    width: 400px;
+    background-color: #fff;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.form__button {
+    margin-top: 30px;
+    text-align: center;
+
+}
+
+.form__button-submit {
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #345efd;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}

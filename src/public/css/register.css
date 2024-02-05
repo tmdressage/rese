@@ -1,0 +1,109 @@
+.alert__content {
+    height: 100px;
+    padding-top: 40px;
+}
+.alert {
+    height: 40px;
+    padding-top: 10px;
+    text-align: center;
+    border-color: #f5c2c7;
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.register__content {
+    margin: 0 auto;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.register__title {
+    margin: 0 auto;
+    height: 50px;
+    width: 500px;
+    background-color: #345efd;
+    color: #fff;
+    font-size: 20px;
+    padding-left: 15px;
+    line-height: 50px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.register__form {
+    margin: 0 auto;
+    height: 235px;
+    width: 500px;
+    background-color: #fff;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.form {
+    padding-top: 15px;
+    margin: 0 auto;
+    width: 450px;
+    text-align: center;
+}
+
+.form__group {
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.form__group-icon {
+    height: 40px;
+    width: 40px;
+}
+
+.icon_name {
+    width: 20px;
+    height: 25px;
+    margin-top: 3px;
+}
+
+.icon_mail {
+    width: 25px;
+    height: 20px;
+    margin-top: 8px;
+}
+
+.icon_key {
+    width: 20px;
+    height: 25px;
+    margin-top: 3px;
+}
+
+.form__error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+    font-size: 15px;
+}
+
+.form__input--text input {
+    width: 390px;
+    height: 30px;
+    border: 1px solid#fff;
+    border-bottom: 2px solid gray;
+    appearance: none;
+    font-size: 15px;
+    color: grey;
+}
+
+.form__button {
+    margin: 10px 20px 0px 0px;
+    text-align: right;
+}
+
+.form__button-submit {
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #345efd;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}

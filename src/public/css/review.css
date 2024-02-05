@@ -1,0 +1,205 @@
+.review__content {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.review__shop {
+    margin: 0 auto;
+    padding-top: 15px;
+    height: 600px;
+    width: 600px;
+}
+
+.review__shop_name {
+    display: flex;
+    height: 70px;
+    align-items: center;
+}
+
+.back_button {
+    height: 25px;
+    width: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    color: gray;
+    text-align: center;
+    padding-top: 2px;
+    padding-right: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.shop_name {
+    margin: 5px 0px 0px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card__img img {
+    width: 85%;
+    height: 85%;
+}
+
+.card__content-tag {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.card__content-tag-area {
+    display: inline-block;
+}
+
+.card__content-tag-genre {
+    display: inline-block;
+}
+
+.card__content-text {
+    width: 85%;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.review__reservation {
+    margin-top: -50px;
+    height: 650px;
+    width: 600px;
+}
+
+.review__reservation.open {
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.reservation_content {
+    margin: 0 auto;
+    padding: 10px 25px 0px 25px;
+    height: 625px;
+    width: 550px;
+    background-color: #345efd;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px gray;
+    position: relative;
+}
+
+.reservation_content_ttl {
+    margin: 0 auto;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.reservation {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation_content_history {
+    height: 150px;
+    width: 500px;
+    padding: 15px;
+    background-color: #4f7ffd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.reservation_content_review {
+    height: 115px;
+    width: 500px;
+    padding: 15px;
+    background-color: #4f7ffd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.reservation_content_comment {
+    height: 195px;
+    width: 500px;
+    padding: 15px;
+    background-color: #4f7ffd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.reservation_table {
+    font-size: 15px;
+    color: #fff;
+    width: 250px;
+    height: 100px;
+}
+
+td {
+    width: 50px;
+}
+
+.review_text {
+    font-size: 15px;
+    color: #fff;
+    margin: 0 auto;
+}
+
+.comment {
+    font-size: 15px;
+    resize: none;
+    border-radius: 3px;
+}
+
+.reservation__content-button {
+    margin: auto -25px;
+}
+
+.reservation_button {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    background-color: #153afd;
+    text-align: center;
+    font-size: 15px;
+    height: 40px;
+    width: 550px;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.rate-form {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.rate-form input[type="radio"] {
+    display: none;
+}
+
+.rate-form label {
+    position: relative;
+    padding: 0 5px;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.rate-form label:hover {
+    color: #ffcc00;
+}
+
+.rate-form label:hover ~ label {
+    color: #ffcc00;
+}
+
+.rate-form input[type="radio"]:checked ~ label {
+    color: #ffcc00;
+}
+
+.form__error {
+    height: 15px;
+    color: #FFF;
+    text-align: left;
+    font-size: 15px;
+    margin-top:-5px;
+}

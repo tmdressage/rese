@@ -1,0 +1,168 @@
+.alert {
+    height: 40px;
+    padding-top: 10px;
+    text-align: center;
+    border-color: #f5c2c7;
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.shop__content {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.shop__card {
+    margin: 15px 20px 15px 0px;
+    height: 250px;
+    width: 280px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.card__img img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.card__content_text {
+    padding: 10px 15px;
+    height: 60px;
+}
+
+.card__content-ttl {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.card__content-tag {
+    font-size: 14px;
+}
+
+.card__content-tag-area {
+    display: inline-block;
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.card__content-tag-genre {
+    display: inline-block;
+    color: black;
+    margin: 0px;
+}
+
+.card__content-button {
+    display: flex;
+    padding: 12px 15px;
+    height: 60px;
+}
+
+.card__content_detail {
+    height: 36px;
+    width: 90px;
+}
+
+.detail_button {
+    padding: 5px 10px;
+    background: #345efd;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+.card__content_review_read{
+    height: 36px;
+    width: 50px;
+    position: relative;
+    margin: 0px 0px 0px 55px;
+
+}
+
+.review_read_button {
+    font-size: 43px;
+    margin-top:-16px;
+    -webkit-text-stroke: 0.5px rgb(244, 232, 11);
+    color: rgb(255, 255, 161);
+}
+
+.review_read_button.open {
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.tooltip.open{
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+
+.tooltip {
+    width: 90px;
+    text-align: center;
+    padding: 10px;
+    font-size: 11px;
+    margin: -30px 0 0;
+    background-color: #666;
+    color: #fff;
+    position: absolute;
+    right: -21px;
+    top: -50%;
+    border-radius: 8px;
+}
+
+.tooltip:before {
+    right: 39%;
+    top: 120%;
+    border: solid transparent;
+    transform: rotate(270deg);
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-color: rgba(102, 102, 102, 0);
+    border-right-color: #5e5e5e;
+    border-width: 10px;
+    margin-top: -8px;
+}
+
+.card__content_favorite {
+    height: 36px;
+    width: 50px;
+    position: relative;
+    margin: 0px 0px 0px auto;
+}
+
+.favorite_button.open {
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.favorite_button {
+    margin: -20px 0px 0px auto;
+    transform: scale(0.9, 1);
+    font-size: 50px;
+    color: #EDEDED;
+
+}
+
+.favorite_button.isActive {
+    margin: -20px 0px 0px auto;
+    transform: scale(0.9, 1);
+    font-size: 50px;
+    color: red;
+
+}
+
+
