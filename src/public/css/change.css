@@ -12,13 +12,13 @@
     width: 600px;
 }
 
-.change__shop_name {
+.change__shop-name {
     display: flex;
     height: 70px;
     align-items: center;
 }
 
-.back_button {
+.back-button {
     height: 25px;
     width: 25px;
     font-size: 14px;
@@ -32,32 +32,32 @@
     box-shadow: 2px 2px 5px gray;
 }
 
-.shop_name {
+.shop-name {
     margin: 5px 0px 0px 10px;
     font-size: 20px;
     font-weight: bold;
 }
 
-.card__img img {
+.change__shop-img img {
     width: 85%;
     height: 85%;
 }
 
-.card__content-tag {
+.change__shop-tag {
     margin-top: 10px;
     font-size: 15px;
     font-weight: bold;
 }
 
-.card__content-tag-area {
+.shop-area {
     display: inline-block;
 }
 
-.card__content-tag-genre {
+.shop-genre {
     display: inline-block;
 }
 
-.card__content-text {
+.change__shop-text {
     width: 85%;
     font-size: 15px;
     font-weight: bold;
@@ -76,13 +76,7 @@
     pointer-events: none;
 }
 
-.change__reservation.open {
-    opacity: 0;
-    transition: opacity 0.5s;
-    pointer-events: none;
-}
-
-.reservation_content {
+.change__reservation--content {
     margin: 0 auto;
     padding: 10px 25px 0px 25px;
     height: 625px;
@@ -93,7 +87,7 @@
     position: relative;
 }
 
-.reservation_content_ttl {
+.title {
     margin: 0 auto;
     text-align: left;
     font-size: 20px;
@@ -104,10 +98,9 @@
 .reservation {
     display: flex;
     flex-direction: column;
-
 }
 
-.reservation_date {
+.input-date {
     font-family: "Nunito", sans-serif;
     border-radius: 3px;
     width: 150px;
@@ -116,7 +109,7 @@
     padding: 5px;
 }
 
-.select_time {
+.input-time {
     margin-top: 10px;
     border-radius: 3px;
     width: 455px;
@@ -127,7 +120,7 @@
     appearance: none;
 }
 
-.select_time::-ms-expand {
+.input-time::-ms-expand {
     margin-top: 10px;
     border-radius: 3px;
     width: 455px;
@@ -137,7 +130,7 @@
     display: none;
 }
 
-.select_number {
+.input-number {
     margin-top: 10px;
     border-radius: 3px;
     width: 455px;
@@ -148,7 +141,7 @@
     appearance: none;
 }
 
-.select_number::-ms-expand {
+.input-number::-ms-expand {
     margin-top: 10px;
     border-radius: 3px;
     width: 455px;
@@ -158,7 +151,7 @@
     display: none;
 }
 
-.reservation_content_copy {
+.reservation-output {
     margin-top: 10px;
     height: 140px;
     width: 440px;
@@ -167,22 +160,22 @@
     border-radius: 8px;
 }
 
-.reservation_table {
+.reservation-table {
     font-size: 15px;
     color: #fff;
     width: 250px;
     height: 100px;
 }
 
-td {
+.column-space {
     width: 50px;
 }
 
-.reservation__content-button {
+.change__reservation-button {
     margin: auto -25px;
 }
 
-.reservation_button {
+.change-button {
     position: absolute;
     bottom: 0;
     color: #fff;
@@ -195,13 +188,13 @@ td {
 }
 
 
-.reservation_time {
+.select-time {
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.reservation_time::before {
+.select-time::before {
     content: "";
     width: 0;
     height: 0;
@@ -215,13 +208,13 @@ td {
     pointer-events: none;
 }
 
-.reservation_number {
+.select-number {
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.reservation_number::before {
+.select-number::before {
     content: "";
     width: 0;
     height: 0;

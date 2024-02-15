@@ -1,4 +1,4 @@
-.review_read__title {
+.review-read__title {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -27,7 +27,7 @@
     justify-content: center;
 }
 
-.review_read__content {
+.review-read__content {
     margin: 0 auto;
     padding: 25px 25px 25px 25px;
     height: 550px;
@@ -38,13 +38,13 @@
     position: relative;
 }
 
-.review_read__content.open {
+.review-read__content.open {
     opacity: 0;
     transition: opacity 0.5s;
     pointer-events: none;
 }
 
-.review_read__content_average {
+.review-read__content--average {
     margin: 0 auto;
     text-align: left;
     font-size: 20px;
@@ -58,17 +58,17 @@
     color: #ffcc00;
 }
 
-.review_read__content_title {
+.review-read__content--title {
     width: 1145px;
     padding-left: 15px;
 }
 
-.review_read_title {
+.review-read-title {
     color: #fff;
     width: 1075px;
 }
 
-.review_read__content_review {
+.review-read__content--review {
     height: 400px;
     width: 1145px;
     padding-left: 15px;
@@ -78,7 +78,7 @@
     overflow-y: scroll;
 }
 
-.review_read_table {
+.review-read-table {
     color: #fff;
     width: 1075px;
     border-collapse: collapse;
@@ -87,30 +87,26 @@
 .date {
     width: 150px;
     border-bottom: 1px solid #dddddd;
-
 }
 
 .name {
     width: 200px;
     border-bottom: 1px solid #dddddd;
-
 }
 
 .rate {
     width: 120px;
     border-bottom: 1px solid #dddddd;
-
 }
 
 .comment {
     width: 830px;
     border-bottom: 1px solid #dddddd;
-
 }
 
 .rate-form {
     width: 120px;
     color: #ffcc00;
-        font-weight: bold;
-        border-bottom: 1px solid #dddddd;
+    font-weight: bold;
+    border-bottom: 1px solid #dddddd;
 }

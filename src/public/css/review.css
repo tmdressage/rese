@@ -12,13 +12,13 @@
     width: 600px;
 }
 
-.review__shop_name {
+.review__shop-name {
     display: flex;
     height: 70px;
     align-items: center;
 }
 
-.back_button {
+.back-button {
     height: 25px;
     width: 25px;
     font-size: 14px;
@@ -32,32 +32,32 @@
     box-shadow: 2px 2px 5px gray;
 }
 
-.shop_name {
+.shop-name {
     margin: 5px 0px 0px 10px;
     font-size: 20px;
     font-weight: bold;
 }
 
-.card__img img {
+.review__shop-img img {
     width: 85%;
     height: 85%;
 }
 
-.card__content-tag {
+.review__shop-tag {
     margin-top: 10px;
     font-size: 15px;
     font-weight: bold;
 }
 
-.card__content-tag-area {
+.shop-area {
     display: inline-block;
 }
 
-.card__content-tag-genre {
+.shop-genre {
     display: inline-block;
 }
 
-.card__content-text {
+.review__shop-text {
     width: 85%;
     font-size: 15px;
     font-weight: bold;
@@ -76,7 +76,7 @@
     pointer-events: none;
 }
 
-.reservation_content {
+.review__reservation--content {
     margin: 0 auto;
     padding: 10px 25px 0px 25px;
     height: 625px;
@@ -87,7 +87,7 @@
     position: relative;
 }
 
-.reservation_content_ttl {
+.title {
     margin: 0 auto;
     text-align: left;
     font-size: 20px;
@@ -100,7 +100,7 @@
     flex-direction: column;
 }
 
-.reservation_content_history {
+.reservation-history {
     height: 150px;
     width: 500px;
     padding: 15px;
@@ -109,7 +109,7 @@
     margin-bottom: 15px;
 }
 
-.reservation_content_review {
+.review-rate {
     height: 115px;
     width: 500px;
     padding: 15px;
@@ -118,7 +118,7 @@
     margin-bottom: 15px;
 }
 
-.reservation_content_comment {
+.review-comment {
     height: 195px;
     width: 500px;
     padding: 15px;
@@ -127,18 +127,18 @@
     margin-bottom: 15px;
 }
 
-.reservation_table {
+.reservation-table {
     font-size: 15px;
     color: #fff;
     width: 250px;
     height: 100px;
 }
 
-td {
+.column-space {
     width: 50px;
 }
 
-.review_text {
+.review-text {
     font-size: 15px;
     color: #fff;
     margin: 0 auto;
@@ -150,11 +150,11 @@ td {
     border-radius: 3px;
 }
 
-.reservation__content-button {
+.review__reservation-button {
     margin: auto -25px;
 }
 
-.reservation_button {
+.review-button {
     position: absolute;
     bottom: 0;
     color: #fff;
@@ -198,8 +198,8 @@ td {
 
 .form__error {
     height: 15px;
-    color: #FFF;
+    color: #fff;
     text-align: left;
     font-size: 15px;
-    margin-top:-5px;
+    margin-top: -5px;
 }

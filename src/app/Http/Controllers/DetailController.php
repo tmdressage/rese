@@ -9,22 +9,21 @@ use Illuminate\Support\Facades\Auth;
 
 class DetailController extends Controller
 {
-    public function getDetail($id)
+    public function getDetail($shop_id)
     {
-        $shop = Shop::find($id);
+        $shop = Shop::find($shop_id);
 
         if (!$shop) {
             return Redirect('/')->with('result', '選択した飲食店の詳細情報が登録されていません');
-            // もしDB上で飲食店のレコードが見つからない場合はホーム画面でエラーメッセージを表示
         } else {
             return view('detail', compact('shop'));
         }
     }
 
-    public function postReservation($id, ReservationRequest $request)
+    public function postDetail($shop_id, ReservationRequest $request)
     {
         $user = Auth::user();
-        $shop = Shop::find($id);
+        $shop = Shop::find($shop_id);
 
         $date = $request->input('reserve_date');
         $time = $request->input('reserve_time');
@@ -44,5 +43,4 @@ class DetailController extends Controller
             return redirect('/')->with('result', '予期せぬエラーが発生しました');
         }
     }
-
 }

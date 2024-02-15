@@ -10,86 +10,80 @@ use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ChangeController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ReviewReadController;
+use App\Http\Controllers\EmailVerificationController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::middleware('auth')->group(function () {
+// メール認証関連のルート
+Route::controller(EmailVerificationController::class)
+    ->prefix('email')->name('verification.')->group(function () {
+        Route::get('/verify', 'verify')->name('notice');
+        Route::post('/notification', 'notification')
+            ->middleware('throttle:6,1')->name('send');
+        Route::get('/verification/{id}/{hash}', 'verification')
+            ->middleware(['signed', 'throttle:6,1'])->name('verify');
+    });
 
-    #ホーム画面（ログイン時）
+// ログイン後(認証後)のルート
+Route::middleware('web', 'verified', 'auth')->group(function () {
+
+    // 飲食店一覧（＝ホーム）
     Route::get('/', [HomeController::class, 'getHome']);
     Route::get('/select', [HomeController::class, 'getSelect']);
-    
-    #お気に入り機能（ログイン時）
-    Route::post('/favorite/:{id}', [FavoriteController::class, 'postFavorite'])->name('favorite');
-    
-    #マイページ画面（ログイン時）
+
+    // お気に入り
+    Route::post('/favorite/:{shop_id}', [FavoriteController::class, 'postFavorite'])->name('favorite');
+
+    // マイページ
     Route::get('/mypage', [MypageController::class, 'getMypage']);
-    Route::post('/cancel/:{id}', [MypageController::class, 'postCancel'])->name('cancel');
+    Route::post('/mypage/cancel/:{reservation_id}', [MypageController::class, 'postCancel'])->name('cancel');
 
-    #予約変更画面（ログイン時）
-    Route::get('/change/:{id}/:{shop_id}', [ChangeController::class, 'getChange'])->name('change'); 
-    Route::post('/reservation/change/:{id}', [ChangeController::class, 'postReservationChange'])->name('reservation_change');
+    // 予約変更
+    Route::get('/change/:{reservation_id}/:{shop_id}', [ChangeController::class, 'getChange'])->name('change');
+    Route::post('/changed/:{reservation_id}', [ChangeController::class, 'postChange'])->name('changed');
 
-    #レビュー投稿画面（ログイン時）
-    Route::get('/review/:{id}/:{shop_id}', [ReviewController::class, 'getReview'])->name('review');
-    Route::post('/reviewed/:{shop_id}', [ReviewController::class, 'postReviewed'])->name('reviewed');
+    // レビュー投稿
+    Route::get('/review/:{reservation_id}/:{shop_id}', [ReviewController::class, 'getReview'])->name('review');
+    Route::post('/reviewed/:{shop_id}', [ReviewController::class, 'postReview'])->name('reviewed');
 
-    #レビュー閲覧画面（ログイン時）
-    Route::get('/review/read/:{id}', [ReviewReadController::class, 'getReviewRead'])->name('review_read');
+    // レビュー閲覧
+    Route::get('/review/read/:{shop_id}', [ReviewReadController::class, 'getReviewRead'])->name('review_read');
 
-    #ログアウト（ログイン時）
+    // ログアウト
     Route::get('/logout', [AuthController::class, 'getLogout']);
 
-    #予約完了画面（ログイン時）   
+    // 予約完了   
     Route::get('/done', [DoneController::class, 'getDone']);
     Route::post('/done', [DoneController::class, 'postDone']);
 
-    #飲食店詳細画面（ログイン時）
-    Route::get('/detail/:{id}', [DetailController::class, 'getDetail'])->name('detail');    
-    Route::post('/reservation/:{id}', [DetailController::class, 'postReservation'])->name('reservation');
+    // 飲食店詳細
+    Route::get('/detail/:{shop_id}', [DetailController::class, 'getDetail'])->name('detail');
+    Route::post('/detail/reservation/:{shop_id}', [DetailController::class, 'postDetail'])->name('reservation');
 
-    #会員登録完了画面（ログイン時）
+    // 会員登録完了
     Route::get('/thanks', [AuthController::class, 'getThanks']);
 
-    #会員登録完了画面の時点でログインしてしまうので、
-    #そのページからmenuでHomeまたはRegistrationを選んだ時は一旦ログアウトしてから遷移する
-    Route::get('/logout_getHome', [HomeController::class, 'logout_getHome']);
-    Route::get('/logout_getRegister', [AuthController::class, 'logout_getRegister']);
+    // 飲食店一覧(一旦ログアウトしてから)
+    Route::get('/logout_getHome', [HomeController::class, 'logoutGetHome']);
 
+    // 会員登録(一旦ログアウトしてから)
+    Route::get('/logout_getRegister', [AuthController::class, 'logoutGetRegister']);
 });
 
-#ログインしていないユーザが認証後のページに入ろうとすると、
-#Authenticate.phpで指定されたページ(login)に自動で飛ばされる
+
+//ログイン
 Route::get('/login', [AuthController::class, 'getLogin'])->name('login');
+//ログインしていないユーザが認証後のルートに入ろうとすると、
+//Authenticate.phpで指定されたページ(login)に自動で飛ばされる
+
 Route::post('/login', [AuthController::class, 'postLogin']);
 
-#会員登録画面
+//会員登録
 Route::get('/register', [AuthController::class, 'getRegister']);
 Route::post('/register', [AuthController::class, 'postRegister']);
 
-#ホーム画面（未ログイン時）
+//飲食店一覧（未ログイン時）
 Route::get('/', [HomeController::class, 'getHome']);
 Route::get('/select', [HomeController::class, 'getSelect']);
 
-#飲食店詳細画面（未ログイン時）
-Route::get('/detail/:{id}', [DetailController::class, 'getDetail'])->name('detail');
-
-
-
-
-
-
-
-
-
-
-
+//飲食店詳細（未ログイン時）
+Route::get('/detail/:{shop_id}', [DetailController::class, 'getDetail'])->name('detail');

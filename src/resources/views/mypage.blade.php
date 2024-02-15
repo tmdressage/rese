@@ -5,8 +5,8 @@
 @endsection
 
 @section('content')
-<div class="mypage__login_name">
-    <p class="login_name">{{ Auth::user()->name }}さん</p>
+<div class="mypage__login-name">
+    <p class="login-name">{{ Auth::user()->name }}さん</p>
 </div>
 @if (session('result'))
 <div class="alert">
@@ -15,29 +15,29 @@
 @endif
 <div class="mypage__content">
     <div class="mypage__reservation">
-        <div class="mypage__reservation_text">予約状況</div>
+        <div class="mypage__reservation--text">予約状況</div>
         @if($reservations->isEmpty())
-        <div class="empty_alert">! 予約状況の登録がありません</div>
+        <div class="empty-alert">! 予約状況の登録がありません</div>
         @endif
-        <div class="mypage__reservation_card">
+        <div class="mypage__reservation--card">
             @foreach($reservations as $reservation)
-            @if($reservation->reserve_datetime < $now) <div class="reservation_card_past">
-                <div class="reservation_content">
-                    <img class="icon_clock" src="img/clock.png" alt="clock">
-                    <p class="reservation_content-ttl">予約{{ $loop->iteration }}</p>
-                    <form class="review" action="{{ route('review',['id' => $reservation->id, 'shop_id' => $reservation->shop_id])}}" method="get">
+            @if($reservation->reserve_datetime < $now) <div class="reservation-card-past">
+                <div class="reservation-content">
+                    <img class="icon-clock" src="img/clock.png" alt="clock">
+                    <p class="reservation-content-title">予約{{ $loop->iteration }}</p>
+                    <form class="review" action="{{ route('review',['reservation_id' => $reservation->id, 'shop_id' => $reservation->shop_id])}}" method="get">
                         @csrf
-                        <button class="review_button" type="submit" name="review">★</button>
+                        <button class="review-button" type="submit" name="review">★</button>
                         <p class="tooltip">レビュー投稿</p>
                     </form>
-                    <form class="cancel" action="{{ route('cancel', ['id' => $reservation->id]) }}" method="post">
+                    <form class="cancel" action="{{ route('cancel', ['reservation_id' => $reservation->id]) }}" method="post">
                         @csrf
-                        <button type="submit"><img class="cancel_button" src="img/cancel.png" alt="cancel"></button>
+                        <button type="submit"><img class="cancel-button" src="img/cancel.png" alt="cancel"></button>
                         <p class="tooltip">予約削除</p>
                     </form>
                 </div>
-                <div class="reservation_detail">
-                    <table class="reservation_table">
+                <div class="reservation-detail">
+                    <table class="reservation-table">
                         <tr>
                             <td>Shop</td>
                             <td>{{ $reservation->shop_name }}</td>
@@ -58,23 +58,23 @@
                 </div>
         </div>
         @else
-        <div class="reservation_card">
-            <div class="reservation_content">
-                <img class="icon_clock" src="img/clock.png" alt="clock">
-                <p class="reservation_content-ttl">予約{{ $loop->iteration }}</p>
-                <form class="change" action="{{ route('change',['id' => $reservation->id, 'shop_id' => $reservation->shop_id])}}" method="get">
+        <div class="reservation-card">
+            <div class="reservation-content">
+                <img class="icon-clock" src="img/clock.png" alt="clock">
+                <p class="reservation-content-title">予約{{ $loop->iteration }}</p>
+                <form class="change" action="{{ route('change',['reservation_id' => $reservation->id, 'shop_id' => $reservation->shop_id])}}" method="get">
                     @csrf
-                    <button type="submit"><img class="change_button" src="img/change.png" alt="change"></button>
+                    <button type="submit"><img class="change-button" src="img/change.png" alt="change"></button>
                     <p class="tooltip">予約変更</p>
                 </form>
-                <form class="cancel" action="{{ route('cancel', ['id' => $reservation->id]) }}" method="post">
+                <form class="cancel" action="{{ route('cancel', ['reservation_id' => $reservation->id]) }}" method="post">
                     @csrf
-                    <button type="submit"><img class="cancel_button" src="img/cancel.png" alt="cancel"></button>
+                    <button type="submit"><img class="cancel-button" src="img/cancel.png" alt="cancel"></button>
                     <p class="tooltip">予約削除</p>
                 </form>
             </div>
-            <div class="reservation_detail">
-                <table class="reservation_table">
+            <div class="reservation-detail">
+                <table class="reservation-table">
                     <tr>
                         <td>Shop</td>
                         <td>{{ $reservation->shop_name }}</td>
@@ -99,41 +99,41 @@
     </div>
 </div>
 <div class="mypage__favorite">
-    <div class="mypage__favorite_text">お気に入り店舗</div>
+    <div class="mypage__favorite--text">お気に入り店舗</div>
     @if($favorites->isEmpty())
-    <div class="empty_alert">! お気に入り店舗の登録がありません</div>
+    <div class="empty-alert">! お気に入り店舗の登録がありません</div>
     @endif
-    <div class="mypage__favorite_card">
+    <div class="mypage__favorite--card">
         @foreach($shops as $shop)
         @if($shop->already_favorite())
-        <div class="shop__card">
-            <div class="card__img">
-                <img class="card_img" src="{{ $shop->shop_img }}" alt="shop">
+        <div class="shop-card">
+            <div class="card-img">
+                <img class="shop-img" src="{{ $shop->shop_img }}" alt="shop">
             </div>
-            <div class="card__content_text">
-                <h3 class="card__content-ttl">{{ $shop->shop_name }}</h3>
-                <div class="card__content-tag">
-                    <p class="card__content-tag-area">#{{ $shop->shop_area }}</p>
-                    <p class="card__content-tag-genre">#{{ $shop->shop_genre }}</p>
+            <div class="card-text">
+                <h3 class="shop-name">{{ $shop->shop_name }}</h3>
+                <div class="card-tag">
+                    <p class="shop-area">#{{ $shop->shop_area }}</p>
+                    <p class="shop-genre">#{{ $shop->shop_genre }}</p>
                 </div>
             </div>
-            <div class="card__content_button">
-                <div class="card__content_detail">
-                    <form class="button" action="{{ route('detail', ['id' => $shop->id]) }}" method="get">
+            <div class="card-button">
+                <div class="detail">
+                    <form action="{{ route('detail', ['shop_id' => $shop->id]) }}" method="get">
                         @csrf
-                        <button class="detail_button" type="submit">詳しくみる</button>
+                        <button class="detail-button" type="submit">詳しくみる</button>
                     </form>
                 </div>
-                <form class="button" action="{{ route('review_read', ['id' => $shop->id]) }}" method="get">
-                    <div class="card__content_review_read">
-                        <button class="review_read_button" type="submit" name="review">★</button>
+                <form action="{{ route('review_read', ['shop_id' => $shop->id]) }}" method="get">
+                    <div class="review-read">
+                        <button class="review-read-button" type="submit" name="review">★</button>
                         <p class="tooltip">レビュー閲覧</p>
                     </div>
                 </form>
-                <div class="card__content_favorite">
-                    <button class="favorite_button isActive" type="submit" name="favorite" data-shop-id="{{ $shop->id }}">❤</button>
+                <div class="favorite">
+                    <button class="favorite-button isActive" type="submit" name="favorite" data-shop-id="{{ $shop->id }}">❤</button>
                     <p class="tooltip">お気に入り</p>
-                </div>                
+                </div>
             </div>
         </div>
         @endif

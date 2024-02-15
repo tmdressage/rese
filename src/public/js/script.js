@@ -1,18 +1,16 @@
 $(function () {
-    $(".js-btn").on("click", function () {
-        // js-btnクラスをクリックすると、
+    $(".header__menu--button").on("click", function () {
         $(
-            ".menu, .btn, .btn-line,.review_read_button, .favorite_button, .tooltip, .reservation_content, .detail__reservation, .change__reservation, .review__reservation,.review_read__content"
-        ).toggleClass("open"); // メニューとバーガーの線にopenクラスをつけ外しする
+            ".menu, .header__menu--button, .header__menu--button-line,.review-read-button, .favorite-button, .tooltip, .detail__reservation, .change__reservation, .review__reservation,.review-read__content, .reservation-content"
+        ).toggleClass("open");
     });
 });
 
 window.addEventListener("DOMContentLoaded", function () {
     $(function () {
-        let favorite = $(".favorite_button");
+        let favorite = $(".favorite-button");
         let favoriteShopId;
 
-        // ボタンがクリックされた時の処理
         favorite.on("click", function () {
             let $this = $(this);
             favoriteShopId = $this.data("shop-id");
@@ -41,8 +39,8 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 $(function () {
-    var $input_time = $("#input_time");
-    var $output_time = $("#output_time");
+    var $input_time = $("#input-time");
+    var $output_time = $("#output-time");
     $input_time.on("input", function () {
         var value = $input_time.val();
         $output_time.text(value);
@@ -50,8 +48,8 @@ $(function () {
 });
 
 $(function () {
-    var $input_date = $("#input_date");
-    var $output_date = $("#output_date");
+    var $input_date = $("#input-date");
+    var $output_date = $("#output-date");
     $input_date.on("input", function () {
         var value = $input_date.val();
         $output_date.text(value);
@@ -59,8 +57,8 @@ $(function () {
 });
 
 $(function () {
-    var $input_number = $("#input_number");
-    var $output_number = $("#output_number");
+    var $input_number = $("#input-number");
+    var $output_number = $("#output-number");
     $input_number.on("input", function () {
         var value = $input_number.val();
         $output_number.text(value + "人");
@@ -105,7 +103,7 @@ $(function () {
 
 $(function () {
     $(".tooltip").hide();
-    $(".card__content_favorite").hover(
+    $(".favorite").hover(
         function () {
             $(this).children(".tooltip").fadeIn("fast");
         },
@@ -117,7 +115,7 @@ $(function () {
 
 $(function () {
     $(".tooltip").hide();
-    $(".card__content_review_read").hover(
+    $(".review-read").hover(
         function () {
             $(this).children(".tooltip").fadeIn("fast");
         },
@@ -126,9 +124,6 @@ $(function () {
         }
     );
 });
-
-
-
 
 $(function () {
     $('input[name="review"]').on("change", function () {

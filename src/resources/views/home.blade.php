@@ -11,42 +11,49 @@
 @if (session('result'))
 <div class="alert">{{ session('result') }}</div>
 @endif
-<div class="shop__content">
+<div class="home__content">
     @foreach($shops as $shop)
-    <div class="shop__card">
-        <div class="card__img">
-            <img class="card_img" src="{{ $shop->shop_img }}" alt="shop">
+    <div class="home__content--card">
+        <div class="card-img">
+            <img class="shop-img" src="{{ $shop->shop_img }}" alt="shop">
         </div>
-        <div class="card__content_text">
-            <h3 class="card__content-ttl">{{ $shop->shop_name }}</h3>
-            <div class="card__content-tag">
-                <p class="card__content-tag-area">#{{ $shop->shop_area }}</p>
-                <p class="card__content-tag-genre">#{{ $shop->shop_genre }}</p>
+        <div class="card-text">
+            <h3 class="shop-name">{{ $shop->shop_name }}</h3>
+            <div class="shop-tag">
+                <p class="shop-area">#{{ $shop->shop_area }}</p>
+                <p class="shop-genre">#{{ $shop->shop_genre }}</p>
             </div>
         </div>
-        <div class="card__content-button">
-            <div class="card__content_detail">
-                <form class="button" action="{{ route('detail', ['id' => $shop->id]) }}" method="get">
+        <div class="card-button">
+            <div class="detail">
+                <form action="{{ route('detail', ['shop_id' => $shop->id]) }}" method="get">
                     @csrf
-                    <button class="detail_button" type="submit">詳しくみる</button>
+                    <button class="detail-button" type="submit">詳しくみる</button>
                 </form>
             </div>
-            <form class="button" action="{{ route('review_read', ['id' => $shop->id]) }}" method="get">
-                <div class="card__content_review_read">
-                    <button class="review_read_button" type="submit" name="review">★</button>
+            <form action="{{ route('review_read', ['shop_id' => $shop->id]) }}" method="get">
+                <div class="review-read">
+                    <button class="review-read-button" type="submit" name="review">★</button>
                     <p class="tooltip">レビュー閲覧</p>
                 </div>
             </form>
+            @if (Auth::check())
             @if($shop->already_favorite())
-            <div class="card__content_favorite">
-                <button class="favorite_button isActive" type="submit" name="favorite" data-shop-id="{{ $shop->id }}">❤</button>
+            <div class="favorite">
+                <button class="favorite-button isActive" type="submit" name="favorite" data-shop-id="{{ $shop->id }}">❤</button>
                 <p class="tooltip">お気に入り</p>
             </div>
             @else
-            <div class="card__content_favorite">
-                <button class="favorite_button notActive" type="submit" name="favorite" data-shop-id="{{ $shop->id }}">❤</button>
+            <div class="favorite">
+                <button class="favorite-button notActive" type="submit" name="favorite" data-shop-id="{{ $shop->id }}">❤</button>
                 <p class="tooltip">お気に入り</p>
             </div>
+            @endif
+            @else
+            <form class="favorite" action="{{ route('login') }}" method="get">
+                <button class="favorite-button-notLogin" type="submit">❤</button>
+                <p class="tooltip">お気に入り</p>
+            </form>
             @endif
         </div>
     </div>
