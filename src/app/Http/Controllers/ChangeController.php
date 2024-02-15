@@ -8,21 +8,20 @@ use App\Http\Requests\ReservationRequest;
 
 class ChangeController extends Controller
 {
-    public function getChange($id, $shop_id)
-    {    
-        $reservation = Reservation::find($id);
+    public function getChange($reservation_id, $shop_id)
+    {
+        $reservation = Reservation::find($reservation_id);
         $shop = Shop::find($shop_id);
 
         if (!$reservation) {
             return Redirect('/mypage')->with('result', '選択した飲食店の予約情報が登録されていません');
-            // もしDB上で飲食店の予約レコードが見つからない場合はマイページでエラーメッセージを表示
         } else {
 
             return view('change', compact('reservation', 'shop'));
         }
-    } 
+    }
 
-    public function postReservationChange($id, ReservationRequest $request)
+    public function postChange($reservation_id, ReservationRequest $request)
     {
 
         $date = $request->input('reserve_date');
@@ -31,11 +30,12 @@ class ChangeController extends Controller
         $dateTime = $date . ' ' . $time;
 
         try {
-            Reservation::where('id', $id)->update(              
+            Reservation::where('id', $reservation_id)->update(
                 [
-                'reserve_datetime' => $dateTime,
-                'reserve_number' => $request->reserve_number
-            ]);
+                    'reserve_datetime' => $dateTime,
+                    'reserve_number' => $request->reserve_number
+                ]
+            );
             return redirect('done');
         } catch (\Throwable $th) {
             return redirect('mypage')->with('result', '予期せぬエラーが発生しました');

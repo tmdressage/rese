@@ -5,16 +5,21 @@
 @endsection
 
 @section('content')
-
+@if (session('result'))
+<div class="alert">
+    {{ session('result') }}
+</div>
+@endif
 <div class="thanks__content">
-    <div class="thanks__text">
-        <p>会員登録ありがとうございます</P>
-    </div>
+    <p class="thanks__text">会員登録ありがとうございます</P>
     <div class="thanks__form">
         <form class="form" action="/mypage" method="get">
             @csrf
             <div class="form__button">
-                <button class="form__button-submit" type="submit">ログインする</button>
+                <button class="form__button--submit" type="submit">
+                    <p class="form__button--text">ログインする
+                    </p>
+                </button>
             </div>
             @csrf
         </form>

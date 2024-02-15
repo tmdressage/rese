@@ -10,22 +10,21 @@ use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
-    public function getReview($id, $shop_id)
+    public function getReview($reservation_id, $shop_id)
     {
-        $reservation = Reservation::find($id);
+        $reservation = Reservation::find($reservation_id);
         $shop = Shop::find($shop_id);
 
         if (!$reservation) {
             return Redirect('/mypage')->with('result', '選択した飲食店の予約情報が登録されていません');
-            // もしDB上で飲食店の予約レコードが見つからない場合はマイページでエラーメッセージを表示
+
         } else {
 
             return view('review', compact('reservation', 'shop'));
         }
     }
 
-
-    public function postReviewed(ReviewRequest $request, $shop_id)
+    public function postReview(ReviewRequest $request, $shop_id)
     {
         $user = Auth::User();
         $shop = Shop::find($shop_id);

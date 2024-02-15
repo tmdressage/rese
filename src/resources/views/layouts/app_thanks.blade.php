@@ -8,6 +8,8 @@
   <title>rese</title>
   <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
   <link rel="stylesheet" href="{{ asset('css/common.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="{{ asset('js/script.js') }}"></script>
   @yield('css')
 </head>
 
@@ -15,16 +17,14 @@
   <header class="header">
     <div class="header__inner">
       <div class="header__menu">
-        <button type="button" class="btn js-btn">
-          <span class="btn-line"></span>
+        <button class="header__menu--button menu_button" type="button">
+          <span class="header__menu--button-line"></span>
         </button>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <script src="js/script.js"></script>
         <nav>
           <ul class="menu">
-            <li class="menu-list"><a href="/logout_getHome">Home</a></li>
-            <li class="menu-list"><a href="/logout_getRegister">Registration</a></li>
-            <li class="menu-list"><a href="/logout">Login</a></li>
+            <li class="menu-list"><a class="menu-text" href="/logout_getHome">Home</a></li>
+            <li class="menu-list"><a class="menu-text" href="/logout_getRegister">Registration</a></li>
+            <li class="menu-list"><a class="menu-text" href="/logout">Login</a></li>
           </ul>
         </nav>
       </div>

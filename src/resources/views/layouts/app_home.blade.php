@@ -18,19 +18,19 @@
   <header class="header">
     <div class="header__inner">
       <div class="header__menu">
-        <button type="button" class="btn js-btn">
-          <span class="btn-line"></span>
+        <button class="header__menu--button menu-button" type="button">
+          <span class="header__menu--button-line"></span>
         </button>
         <nav>
           <ul class="menu">
             @if (Auth::check())
-            <li class="menu-list"><a href="/">Home</a></li>
-            <li class="menu-list"><a href="/logout">Logout</a></li>
-            <li class="menu-list"><a href="/mypage">Mypage</a></li>
+            <li class="menu-list"><a class="menu-text" href="/">Home</a></li>
+            <li class="menu-list"><a class="menu-text" href="/logout">Logout</a></li>
+            <li class="menu-list"><a class="menu-text" href="/mypage">Mypage</a></li>
             @else
-            <li class="menu-list"><a href="/">Home</a></li>
-            <li class="menu-list"><a href="/register">Registration</a></li>
-            <li class="menu-list"><a href="/login">Login</a></li>
+            <li class="menu-list"><a class="menu-text" href="/">Home</a></li>
+            <li class="menu-list"><a class="menu-text" href="/register">Registration</a></li>
+            <li class="menu-list"><a class="menu-text" href="/login">Login</a></li>
             @endif
           </ul>
         </nav>
@@ -39,13 +39,13 @@
         Rese
       </h1>
       <div class="header__search">
-        <form class="search_box" action="/select" method="get">
+        <form class="header__search--box" action="/select" method="get">
           <?php
           $select = isset($_GET['area']) ? $_GET['area'] : '';
           ?>
           @csrf
-          <div class="search_area">
-            <select class="select_area" name="area" onchange="this.form.submit()">
+          <div class="search-area">
+            <select class="select-area" name="area" onchange="this.form.submit()">
               <option value="" disabled selected style="display:none;">All area</option>
               <option value="">All area</option>
               <option value="東京都" <?= $select === '東京都' ? ' selected' : ''; ?>>東京都</option>
@@ -57,8 +57,8 @@
           $select = isset($_GET['genre']) ? $_GET['genre'] : '';
           ?>
           @csrf
-          <div class="search_genre">
-            <select class="select_genre" name="genre" onchange="this.form.submit()">
+          <div class="search-genre">
+            <select class="select-genre" name="genre" onchange="this.form.submit()">
               <option value="" disabled selected style="display:none;">All genre</option>
               <option value="">All genre</option>
               <option value="寿司" <?= $select === '寿司' ? ' selected' : ''; ?>>寿司</option>
@@ -68,15 +68,16 @@
               <option value="ラーメン" <?= $select === 'ラーメン' ? ' selected' : ''; ?>>ラーメン</option>
             </select>
           </div>
-          <div class="search_button">
+          <div class="search-button">
             <input class="search" type="submit" value="">
-            <img class="icon_search" src="img/search.png" alt="Search">
+            <img class="icon-search" src="img/search.png" alt="Search">
           </div>
-          <input class="search_text" type="text" name="keyword" value="{{$keyword}}" placeholder="Search ...">
+          <input class="search-text" type="text" name="keyword" value="{{$keyword}}" placeholder="Search ...">
         </form>
       </div>
     </div>
   </header>
+
   <main>
     @yield('content')
   </main>

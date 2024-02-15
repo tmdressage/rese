@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //飲食店情報はダミーデータではなくShopsTableSeederに記載のデータを格納
         $this->call(ShopsTableSeeder::class); 
         User::factory(10)->create();
         Reservation::factory(10)->create();

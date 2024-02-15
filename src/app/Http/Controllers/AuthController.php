@@ -37,9 +37,11 @@ class AuthController extends Controller
                 'email' => $request['email'],
                 'password' => Hash::make($request['password']),
             ]);
+
             Auth::attempt(['email' => $request['email'], 'password' => $request['password']]);
 
             return redirect('thanks');
+
         } catch (\Throwable $th) {
             return redirect('register')->with('result', '予期せぬエラーが発生しました');
         }
@@ -54,14 +56,11 @@ class AuthController extends Controller
     {
         Auth::logout();
         return redirect('login');
-        //ThanksページのmenuでLoginを選んだときも、
-        //本処理を用いて一旦ログアウトしてから遷移する 
     }
 
-    public function logout_getRegister()
+    public function logoutGetRegister()
     {
         Auth::logout();
         return redirect('register');
-        //ThanksページのmenuでRegistrationを選んだ時は一旦ログアウトしてから遷移する
     }
 }

@@ -5,18 +5,18 @@
 @endsection
 
 @section('content')
-<div class="review_read__title">
+<div class="review-read__title">
     <button class="back_button" type="button" onclick="history.back()">＜
     </button>
     <p class="title">【{{ $shop->shop_name }}】のレビュー</p>
 </div>
-<div class="review_read__content">
-    <div class="review_read__content_average">
+<div class="review-read__content">
+    <div class="review-read__content--average">
         レビュー平均点：<p class="average"> {{ $roundAverage_rate}}
         </p> （5段階評価）
     </div>
-    <div class="review_read__content_title">
-        <table class="review_read_title">
+    <div class="review-read__content--title">
+        <table class="review-read-title">
             <tr>
                 <td class="date">投稿日</td>
                 <td class="name">投稿者</td>
@@ -25,8 +25,8 @@
             </tr>
         </table>
     </div>
-    <div class="review_read__content_review">
-        <table class="review_read_table">
+    <div class="review-read__content--review">
+        <table class="review-read-table">
             @foreach($reviews as $review)
             <tr>
                 <td class="date"> {{ substr($review->created_at, 0, 10) }}</td>

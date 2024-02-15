@@ -1,9 +1,9 @@
-.mypage__login_name {
+.mypage__login-name {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.login_name {
+.login-name {
     margin: 0px 0px 10px -15px;
     font-size: 24px;
     font-weight: bold;
@@ -33,14 +33,14 @@
     width: 500px;
 }
 
-.mypage__reservation_text {
+.mypage__reservation--text {
     margin: 10px 0px 15px 0px;
     text-align: left;
     font-size: 20px;
     font-weight: bold;
 }
 
-.empty_alert {
+.empty-alert {
     height: 100px;
     line-height: 100px;
     text-align: left;
@@ -48,14 +48,14 @@
     font-weight: bold;
 }
 
-.mypage__reservation_card {
+.mypage__reservation--card {
     margin: 0 auto;
     width: 500px;
     display: flex;
     flex-direction: column;
 }
 
-.reservation_card {
+.reservation-card {
     margin-bottom: 30px;
     height: 250px;
     width: 450px;
@@ -64,7 +64,7 @@
     box-shadow: 2px 2px 5px gray;
 }
 
-.reservation_card_past {
+.reservation-card-past {
     margin-bottom: 30px;
     height: 250px;
     width: 450px;
@@ -73,24 +73,24 @@
     box-shadow: 2px 2px 5px gray;
 }
 
-.reservation_content {
+.reservation-content {
     display: flex;
     padding: 20px 30px 5px 30px;
 }
 
-.reservation_content.open {
+.reservation-content.open {
     opacity: 0;
     transition: opacity 0.5s;
     pointer-events: none;
 }
 
-.icon_clock {
+.icon-clock {
     height: 33px;
     width: 33px;
     color: #fff;
 }
 
-.reservation_content-ttl {
+.reservation-content-title {
     color: #fff;
     margin: 5px 0px 0px 20px;
     font-size: 17px;
@@ -101,39 +101,19 @@
     position: relative;
 }
 
-.review_button {
+.review-button {
     font-size: 33px;
     -webkit-text-stroke: 0.5px #fff;
     margin-top: -10px;
     color: rgb(255, 255, 161);
 }
 
-.review_read_button {
-    font-size: 43px;
-    margin-top:-16px;
-    -webkit-text-stroke: 0.5px rgb(244, 232, 11);
-    color: rgb(255, 255, 161);
-}
-
-.review_read_button.open {
-    opacity: 0;
-    transition: opacity 0.5s;
-    pointer-events: none;
-}
-
-.tooltip.open{
-    opacity: 0;
-    transition: opacity 0.5s;
-    pointer-events: none;
-}
-
-
 .change {
     margin: 0px 0px 0px 190px;
     position: relative;
 }
 
-.change_button {
+.change-button {
     height: 45px;
     width: 33px;
     margin-top: -8px;
@@ -153,6 +133,12 @@
     border-radius: 8px;
 }
 
+.tooltip.open {
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
 .tooltip:before {
     right: 39%;
     top: 120%;
@@ -168,30 +154,29 @@
     margin-top: -8px;
 }
 
-
 .cancel {
     margin: 0px 0px 0px auto;
     position: relative;
 }
 
-.cancel_button {
+.cancel-button {
     height: 25px;
     width: 25px;
     margin-top: 2px;
 }
 
-.reservation_detail {
+.reservation-detail {
     padding: 5px 30px;
     margin-top: 15px;
 }
 
-.reservation_table {
+.reservation-table {
     color: #fff;
     width: 250px;
     height: 150px;
 }
 
-.reservation_past {
+.reservation-past {
     padding-left: 10px;
     background-color: #f8d7da;
     color: red;
@@ -200,17 +185,17 @@
 
 .mypage__favorite {
     margin: 0 auto;
-    width: 650px;   
+    width: 650px;
 }
 
-.mypage__favorite_text {
+.mypage__favorite--text {
     margin: 10px 0px 15px 0px;
     text-align: left;
     font-size: 20px;
     font-weight: bold;
 }
 
-.mypage__favorite_card {
+.mypage__favorite--card {
     margin: 0 auto;
     width: 650px;
     display: flex;
@@ -218,7 +203,7 @@
     flex-wrap: wrap;
 }
 
-.shop__card {
+.shop-card {
     margin: 0px 45px 30px 0px;
     height: 250px;
     width: 280px;
@@ -227,54 +212,54 @@
     box-shadow: 2px 2px 5px gray;
 }
 
-.card__img img {
+.card-img img {
     width: 100%;
     height: 130px;
     object-fit: cover;
     border-radius: 8px 8px 0px 0px;
 }
 
-.card__content_text {
+.card-text {
     padding: 10px 15px;
     height: 60px;
 }
 
-.card__content-ttl {
+.shop-name {
     font-size: 18px;
     font-weight: bold;
     margin-top: 5px;
     margin-bottom: 0px;
 }
 
-.card__content-tag {
+.card-tag {
     font-size: 14px;
 }
 
-.card__content-tag-area {
+.shop-area {
     display: inline-block;
     color: black;
     margin-top: 0px;
     margin-bottom: 10px;
 }
 
-.card__content-tag-genre {
+.shop-genre {
     display: inline-block;
     color: black;
     margin: 0px;
 }
 
-.card__content_button {
+.card-button {
     display: flex;
     padding: 12px 15px;
     height: 60px;
 }
 
-.card__content_detail {
+.detail {
     height: 36px;
     width: 90px;
 }
 
-.detail_button {
+.detail-button {
     padding: 5px 10px;
     background: #345efd;
     color: #fff;
@@ -282,36 +267,48 @@
     border-radius: 8px;
 }
 
-.card__content_review_read{
+.review-read {
     height: 36px;
     width: 50px;
     position: relative;
     margin: 0px 0px 0px 55px;
-
 }
 
-.card__content_favorite {
+
+.review-read-button {
+    font-size: 43px;
+    margin-top: -16px;
+    -webkit-text-stroke: 0.5px rgb(244, 232, 11);
+    color: rgb(255, 255, 161);
+}
+
+.review-read-button.open {
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.favorite {
     height: 36px;
     width: 50px;
     position: relative;
     margin: 0px 0px 0px auto;
 }
 
-.favorite_button {
+.favorite-button {
     margin: -20px 0px 0px auto;
     transform: scale(0.9, 1);
     font-size: 50px;
     color: #ededed;
 }
 
-.favorite_button.open {
+.favorite-button.open {
     opacity: 0;
     transition: opacity 0.5s;
     pointer-events: none;
-    
 }
 
-.favorite_button.isActive {
+.favorite-button.isActive {
     margin: -20px 0px 0px auto;
     transform: scale(0.9, 1);
     font-size: 50px;

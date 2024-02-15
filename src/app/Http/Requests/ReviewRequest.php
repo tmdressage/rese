@@ -26,7 +26,7 @@ class ReviewRequest extends FormRequest
                  
         return [
             'review' => ['required'],    
-            'comment' => ['max:500'], 
+            'comment' => ['max:500'], //コメントは任意入力
           ];
     }
 

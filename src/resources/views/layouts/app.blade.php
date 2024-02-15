@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="{{ asset('css/common.css') }}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="{{ asset('js/script.js') }}"></script>
-
   @yield('css')
 </head>
 
@@ -19,19 +18,19 @@
   <header class="header">
     <div class="header__inner">
       <div class="header__menu">
-        <button type="button" class="btn js-btn">
-          <span class="btn-line"></span>
+        <button class="header__menu--button menu_button" type="button">
+          <span class="header__menu--button-line"></span>
         </button>
         <nav>
           <ul class="menu">
             @if (Auth::check())
-            <li class="menu-list"><a href="/">Home</a></li>
-            <li class="menu-list"><a href="/logout">Logout</a></li>
-            <li class="menu-list"><a href="/mypage">Mypage</a></li>
+            <li class="menu-list"><a class="menu-text" href="/">Home</a></li>
+            <li class="menu-list"><a class="menu-text" href="/logout">Logout</a></li>
+            <li class="menu-list"><a class="menu-text" href="/mypage">Mypage</a></li>
             @else
-            <li class="menu-list"><a href="/">Home</a></li>
-            <li class="menu-list"><a href="/register">Registration</a></li>
-            <li class="menu-list"><a href="/login">Login</a></li>
+            <li class="menu-list"><a class="menu-text" href="/">Home</a></li>
+            <li class="menu-list"><a class="menu-text" href="/register">Registration</a></li>
+            <li class="menu-list"><a class="menu-text" href="/login">Login</a></li>
             @endif
           </ul>
         </nav>

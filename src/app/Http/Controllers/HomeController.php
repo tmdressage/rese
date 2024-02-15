@@ -10,21 +10,20 @@ class HomeController extends Controller
 {
     public function getHome()
     {
-        $shops = Shop::all(); //レコード取得
+        $shops = Shop::all();
         return view('home', compact('shops'), ['keyword' => '']);
     }
-    
-    public function logout_getHome()
+
+    public function logoutGetHome()
     {
         Auth::logout();
         return redirect('/');
-        //ThanksページのmenuでHomeを選んだ時は一旦ログアウトしてから遷移する
     }
 
 
     public function getSelect(Request $request)
     {
-        $area= $request->input('area');
+        $area = $request->input('area');
         $genre = $request->input('genre');
         $keyword = $request->input('keyword');
 
@@ -44,7 +43,6 @@ class HomeController extends Controller
 
         $shops = $query->get();
 
-        return view('home', compact('shops','area', 'genre', 'keyword'));
- 
-    }  
+        return view('home', compact('shops', 'area', 'genre', 'keyword'));
+    }
 }

@@ -7,7 +7,8 @@
     color: #842029;
 }
 
-.shop__content {
+
+.home__content {
     margin: 0 auto;
     max-width: 1200px;
     display: flex;
@@ -15,7 +16,7 @@
     flex-wrap: wrap;
 }
 
-.shop__card {
+.home__content--card {
     margin: 15px 20px 15px 0px;
     height: 250px;
     width: 280px;
@@ -24,54 +25,54 @@
     box-shadow: 2px 2px 5px gray;
 }
 
-.card__img img {
+.card-img img {
     width: 100%;
     height: 130px;
     object-fit: cover;
     border-radius: 8px 8px 0px 0px;
 }
 
-.card__content_text {
+.card-text {
     padding: 10px 15px;
     height: 60px;
 }
 
-.card__content-ttl {
+.shop-name {
     font-size: 18px;
     font-weight: bold;
     margin-top: 5px;
     margin-bottom: 0px;
 }
 
-.card__content-tag {
+.shop-tag {
     font-size: 14px;
 }
 
-.card__content-tag-area {
+.shop-area {
     display: inline-block;
     color: black;
     margin-top: 0px;
     margin-bottom: 10px;
 }
 
-.card__content-tag-genre {
+.shop-genre {
     display: inline-block;
     color: black;
     margin: 0px;
 }
 
-.card__content-button {
+.card-button {
     display: flex;
     padding: 12px 15px;
     height: 60px;
 }
 
-.card__content_detail {
+.detail {
     height: 36px;
     width: 90px;
 }
 
-.detail_button {
+.detail-button {
     padding: 5px 10px;
     background: #345efd;
     color: #fff;
@@ -79,33 +80,31 @@
     border-radius: 8px;
 }
 
-.card__content_review_read{
+.review-read {
     height: 36px;
     width: 50px;
     position: relative;
     margin: 0px 0px 0px 55px;
-
 }
 
-.review_read_button {
+.review-read-button {
     font-size: 43px;
-    margin-top:-16px;
+    margin-top: -16px;
     -webkit-text-stroke: 0.5px rgb(244, 232, 11);
     color: rgb(255, 255, 161);
 }
 
-.review_read_button.open {
+.review-read-button.open {
     opacity: 0;
     transition: opacity 0.5s;
     pointer-events: none;
 }
 
-.tooltip.open{
+.tooltip.open {
     opacity: 0;
     transition: opacity 0.5s;
     pointer-events: none;
 }
-
 
 .tooltip {
     width: 90px;
@@ -136,33 +135,42 @@
     margin-top: -8px;
 }
 
-.card__content_favorite {
+.favorite {
     height: 36px;
     width: 50px;
     position: relative;
     margin: 0px 0px 0px auto;
 }
 
-.favorite_button.open {
+.favorite.open {
     opacity: 0;
     transition: opacity 0.5s;
     pointer-events: none;
 }
 
-.favorite_button {
+.favorite-button.open {
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.favorite-button {
     margin: -20px 0px 0px auto;
     transform: scale(0.9, 1);
     font-size: 50px;
-    color: #EDEDED;
-
+    color: #ededed;
 }
 
-.favorite_button.isActive {
+.favorite-button.isActive {
     margin: -20px 0px 0px auto;
     transform: scale(0.9, 1);
     font-size: 50px;
     color: red;
-
 }
 
-
+.favorite-button-notLogin {
+    margin: -20px 0px 0px auto;
+    transform: scale(0.9, 1);
+    font-size: 50px;
+    color: #ededed;
+}

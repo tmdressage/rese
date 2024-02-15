@@ -7,37 +7,37 @@
 @section('content')
 <div class="change__content">
     <div class="change__shop">
-        <div class="change__shop_name">
-            <button class="back_button" type="button" onclick="history.back()">＜
+        <div class="change__shop-name">
+            <button class="back-button" type="button" onclick="history.back()">＜
             </button>
-            <div class="shop_name">
+            <div class="shop-name">
                 {{ $shop->shop_name }}
             </div>
         </div>
-        <div class="card__img">
-            <img class="card_img" src="{{ $shop->shop_img }}" alt="shop">
+        <div class="change__shop-img">
+            <img class="shop-img" src="{{ $shop->shop_img }}" alt="shop">
         </div>
-        <div class="card__content-tag">
-            <p class="card__content-tag-area">#{{ $shop->shop_area }}</p>
-            <p class="card__content-tag-genre">#{{ $shop->shop_genre }}</p>
+        <div class="change__shop-tag">
+            <p class="shop-area">#{{ $shop->shop_area }}</p>
+            <p class="shop-genre">#{{ $shop->shop_genre }}</p>
         </div>
-        <h3 class="card__content-text">#{{ $shop->shop_text }}</h3>
+        <h3 class="change__shop-text">#{{ $shop->shop_text }}</h3>
     </div>
     <div class="change__reservation">
-        <div class="reservation_content">
-            <div class="reservation_content_ttl">
+        <div class="change__reservation--content">
+            <div class="title">
                 <p>予約変更</P>
             </div>
-            <form class="reservation" action="{{ route('reservation_change', ['id' => $reservation->id, 'shop_id' => $reservation->shop_id]) }}" method="post">
+            <form class="reservation" action="{{ route('changed', ['reservation_id' => $reservation->id]) }}" method="post">
                 @csrf
-                <input class="reservation_date" type="date" id="input_date" name="reserve_date" value="{{ substr($reservation->reserve_datetime, 0, 10) }}">
+                <input class="input-date" type="date" id="input-date" name="reserve_date" value="{{ substr($reservation->reserve_datetime, 0, 10) }}">
                 <div class="form__error">
                     @error('reserve_date')
                     {{ $message }}
                     @enderror
                 </div>
-                <div class="reservation_time">
-                    <select class="select_time" id="input_time" name="reserve_time">
+                <div class="select-time">
+                    <select class="input-time" id="input-time" name="reserve_time">
                         <option value="{{ substr($reservation->reserve_datetime, 11, 5) }}" disabled selected style="display:none;">{{ substr($reservation->reserve_datetime, 11, 5) }}</option>
                         <option value="10:00">10:00</option>
                         <option value="10:30">10:30</option>
@@ -71,8 +71,8 @@
                     {{ $message }}
                     @enderror
                 </div>
-                <div class="reservation_number">
-                    <select class="select_number" id="input_number" name="reserve_number">
+                <div class="select-number">
+                    <select class="input-number" id="input-number" name="reserve_number">
                         <option value="{{ $reservation->reserve_number }}" disabled selected style="display:none;">{{ $reservation->reserve_number }}人</option>
                         <option value="1">1人</option>
                         <option value="2">2人</option>
@@ -180,28 +180,28 @@
                     {{ $message }}
                     @enderror
                 </div>
-                <div class="reservation_content_copy">
-                    <table class="reservation_table">
+                <div class="reservation-output">
+                    <table class="reservation-table">
                         <tr>
-                            <td>Shop</td>
-                            <td>{{ $shop->shop_name }}</td>
+                            <td class="column-space">Shop</td>
+                            <td class="column-space">{{ $shop->shop_name }}</td>
                         </tr>
                         <tr>
-                            <td>Date</td>
-                            <td><span id="output_date"></span></td>
+                            <td class="column-space">Date</td>
+                            <td class="column-space"><span id="output-date"></span></td>
                         </tr>
                         <tr>
-                            <td>Time</td>
-                            <td><span id="output_time"></span></td>
+                            <td class="column-space">Time</td>
+                            <td class="column-space"><span id="output-time"></span></td>
                         </tr>
                         <tr>
-                            <td>Number</td>
-                            <td><span id="output_number"></span></td>
+                            <td class="column-space">Number</td>
+                            <td class="column-space"><span id="output-number"></span></td>
                         </tr>
                     </table>
                 </div>
-                <div class="reservation__content-button">
-                    <button class="reservation_button" type="submit">予約を変更する
+                <div class="change__reservation-button">
+                    <button class="change-button" type="submit">予約を変更する
                     </button>
                 </div>
             </form>

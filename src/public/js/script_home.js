@@ -1,15 +1,14 @@
 $(function () {
-    $(".js-btn").on("click", function () {
-        // js-btnクラスをクリックすると、
+    $(".header__menu--button").on("click", function () {
         $(
-            ".menu, .btn, .btn-line, .review_read_button, .favorite_button,.tooltip,.header__search"
-        ).toggleClass("open"); // メニューとバーガーの線にopenクラスをつけ外しする
+            ".menu, .header__search, .header__menu--button, .header__menu--button-line, .review-read-button, .favorite, .favorite-button, favorite-button-notLogin, .tooltip"
+        ).toggleClass("open");
     });
 });
 
 window.addEventListener("DOMContentLoaded", function () {
     $(function () {
-        let favorite = $(".favorite_button");
+        let favorite = $(".favorite-button");
         let favoriteShopId;
 
         favorite.on("click", function () {
@@ -43,7 +42,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 $(function () {
     $(".tooltip").hide();
-    $(".card__content_favorite").hover(
+    $(".favorite").hover(
         function () {
             $(this).children(".tooltip").fadeIn("fast");
         },
@@ -55,7 +54,7 @@ $(function () {
 
 $(function () {
     $(".tooltip").hide();
-    $(".card__content_review_read").hover(
+    $(".review_read").hover(
         function () {
             $(this).children(".tooltip").fadeIn("fast");
         },

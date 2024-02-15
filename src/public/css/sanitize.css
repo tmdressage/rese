@@ -52,7 +52,9 @@ cursor: default; /* 1 */
 */
 
 body {
-margin: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /**
@@ -267,6 +269,25 @@ input,
 select {
 margin: 0;
 }
+
+button:hover {
+    cursor: pointer;
+}
+
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    vertical-align: middle;
+    border: 0;
+    background: transparent;
+    outline: 0;
+    border-radius: 0;
+    text-align: inherit;
+}
+
+
+
 
 /**
 * 1. Show the overflow in IE.

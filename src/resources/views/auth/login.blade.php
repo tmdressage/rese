@@ -13,15 +13,15 @@
     @endif
 </div>
 <div class="login__content">
-    <div class="login__title">Login</div>
+    <p class="login__title">Login</p>
     <div class="login__form">
         <form class="form" action="/login" method="post" novalidate>
             @csrf
             <div class="form__group">
-                <div class="form__group-icon">
-                    <img class="icon_mail" src="img/mail.png" alt="Mail">
+                <div class="form__group--icon">
+                    <img class="icon-mail" src="img/mail.png" alt="Mail">
                 </div>
-                <div class="form__group-content">
+                <div class="form__group--content">
                     <div class="form__input--text">
                         <input type="email" name="email" value="{{ old('email') }}" placeholder="Email" />
                     </div>
@@ -33,10 +33,10 @@
                 </div>
             </div>
             <div class="form__group">
-                <div class="form__group-icon">
-                    <img class="icon_key" src="img/key.png" alt="Pass">
+                <div class="form__group--icon">
+                    <img class="icon-key" src="img/key.png" alt="Pass">
                 </div>
-                <div class="form__group-content">
+                <div class="form__group--content">
                     <div class="form__input--text">
                         <input type="password" name="password" placeholder="Password" />
                     </div>
@@ -48,7 +48,9 @@
                 </div>
             </div>
             <div class="form__button">
-                <button class="form__button-submit" type="submit">ログイン</button>
+                <button class="form__button--submit" type="submit">
+                    <p class="form__button--text">ログイン</p>
+                </button>
             </div>
             @csrf
         </form>

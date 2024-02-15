@@ -53,18 +53,18 @@
     display: flex;
 }
 
-.form__group-icon {
+.form__group--icon {
     height: 40px;
     width: 40px;
 }
 
-.icon_mail {
+.icon-mail {
     width: 25px;
     height: 20px;
     margin-top: 8px;
 }
 
-.icon_key {
+.icon-key {
     width: 20px;
     height: 25px;
     margin-top: 3px;
@@ -90,16 +90,19 @@
 .form__button {
     margin: 10px 20px 0px 0px;
     text-align: right;
-
 }
 
-.form__button-submit {
+.form__button--submit {
     width: 80px;
     height: 30px;
     border: none;
     border-radius: 5px;
     background-color: #345efd;
+    cursor: pointer;
+}
+
+.form__button--text {
+    margin: 0 auto;
     color: #fff;
     text-align: center;
-    cursor: pointer;
 }
