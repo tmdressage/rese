@@ -45,6 +45,5 @@ class RegisterRequest extends FormRequest
             'password.min' => '! パスワードを8文字以上で入力してください。',
             'password.max' => '! パスワードを191文字以下で入力してください。',
         ];
-    }        
-
+    }
 }

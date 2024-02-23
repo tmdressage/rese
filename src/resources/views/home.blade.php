@@ -8,14 +8,18 @@
 @if($shops->isEmpty())
 <div class="alert">検索結果はありませんでした</div>
 @endif
-@if (session('result'))
-<div class="alert">{{ session('result') }}</div>
-@endif
+<div class="alert__content">
+    @if (session('error'))
+    <div class="alert__content--error">
+        {{ session('error') }}
+    </div>
+    @endif
+</div>
 <div class="home__content">
     @foreach($shops as $shop)
     <div class="home__content--card">
         <div class="card-img">
-            <img class="shop-img" src="{{ $shop->shop_img }}" alt="shop">
+            <img class="shop-img" src="{{ asset($shop->shop_img) }}" alt="shop">
         </div>
         <div class="card-text">
             <h3 class="shop-name">{{ $shop->shop_name }}</h3>
@@ -32,6 +36,7 @@
                 </form>
             </div>
             <form action="{{ route('review_read', ['shop_id' => $shop->id]) }}" method="get">
+                @csrf
                 <div class="review-read">
                     <button class="review-read-button" type="submit" name="review">★</button>
                     <p class="tooltip">レビュー閲覧</p>
@@ -51,6 +56,7 @@
             @endif
             @else
             <form class="favorite" action="{{ route('login') }}" method="get">
+                @csrf
                 <button class="favorite-button-notLogin" type="submit">❤</button>
                 <p class="tooltip">お気に入り</p>
             </form>

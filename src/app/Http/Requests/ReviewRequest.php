@@ -22,12 +22,12 @@ class ReviewRequest extends FormRequest
      * @return array
      */
     public function rules()
-    {     
-                 
+    {
+
         return [
-            'review' => ['required'],    
+            'review' => ['required'],
             'comment' => ['max:500'], //コメントは任意入力
-          ];
+        ];
     }
 
     public function messages()

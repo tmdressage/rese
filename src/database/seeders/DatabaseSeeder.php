@@ -18,12 +18,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //飲食店情報はダミーデータではなくShopsTableSeederに記載のデータを格納
-        $this->call(ShopsTableSeeder::class); 
+        $this->call(UsersTableSeeder::class); //既存データと重複しないようmigrate:freshしてから実行すること
+        $this->call(ShopsTableSeeder::class); //既存データと重複しないようmigrate:freshしてから実行すること
         User::factory(10)->create();
         Reservation::factory(10)->create();
         Favorite::factory(20)->create();
         Review::factory(100)->create();
-       
     }
 }

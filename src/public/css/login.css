@@ -3,7 +3,16 @@
     padding-top: 40px;
 }
 
-.alert {
+.alert__content--success {
+    height: 40px;
+    padding-top: 10px;
+    text-align: center;
+    border-color: #badbcc;
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.alert__content--error {
     height: 40px;
     padding-top: 10px;
     text-align: center;

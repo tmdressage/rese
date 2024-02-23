@@ -16,7 +16,6 @@
                     </p>
                 </button>
             </div>
-            @csrf
         </form>
     </div>
 </div>

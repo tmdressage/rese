@@ -14,7 +14,7 @@ class DetailController extends Controller
         $shop = Shop::find($shop_id);
 
         if (!$shop) {
-            return Redirect('/')->with('result', '選択した飲食店の詳細情報が登録されていません');
+            return redirect('/')->with('error', '選択した飲食店の詳細情報が登録されていません');
         } else {
             return view('detail', compact('shop'));
         }
@@ -40,7 +40,7 @@ class DetailController extends Controller
             ]);
             return redirect('done');
         } catch (\Throwable $th) {
-            return redirect('/')->with('result', '予期せぬエラーが発生しました');
+            return redirect('/')->with('error', '予期せぬエラーが発生しました');
         }
     }
 }

@@ -16,11 +16,13 @@ class Review extends Model
         'comment',
     ];
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
- 
-    public function shop() {
+
+    public function shop()
+    {
         return $this->belongsTo(Shop::class);
     }
 }

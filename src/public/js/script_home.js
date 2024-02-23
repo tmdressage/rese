@@ -12,7 +12,6 @@ window.addEventListener("DOMContentLoaded", function () {
         let favoriteShopId;
 
         favorite.on("click", function () {
-            
             let $this = $(this);
             favoriteShopId = $this.data("shop-id");
             $.ajax({
@@ -39,7 +38,6 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
 $(function () {
     $(".tooltip").hide();
     $(".favorite").hover(
@@ -54,7 +52,7 @@ $(function () {
 
 $(function () {
     $(".tooltip").hide();
-    $(".review_read").hover(
+    $(".review-read").hover(
         function () {
             $(this).children(".tooltip").fadeIn("fast");
         },
@@ -63,6 +61,3 @@ $(function () {
         }
     );
 });
-
-
-

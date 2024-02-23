@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="change__shop-img">
-            <img class="shop-img" src="{{ $shop->shop_img }}" alt="shop">
+            <img class="shop-img" src="{{ asset($shop->shop_img) }}" alt="shop">
         </div>
         <div class="change__shop-tag">
             <p class="shop-area">#{{ $shop->shop_area }}</p>

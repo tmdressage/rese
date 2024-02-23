@@ -7,7 +7,6 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
 
-
 class EmailVerificationController extends Controller
 {
     // メール認証有無の確認
@@ -16,7 +15,7 @@ class EmailVerificationController extends Controller
         $user = $request->user();
         // 既にメール認証済みの場合はそのままホーム画面へ遷移
         if ($user->hasVerifiedEmail()) {
-            return redirect()->intended(RouteServiceProvider::HOME);
+            return redirect()->intended(RouteServiceProvider::MYPAGE)->with('result', 'ログインしました');
         }
 
         // メール認証済みでない場合は認証ページへ遷移
@@ -29,7 +28,7 @@ class EmailVerificationController extends Controller
         $user = $request->user();
         // 既にメール認証済みの場合はそのままホーム画面へ遷移
         if ($user->hasVerifiedEmail()) {
-            return redirect()->intended(RouteServiceProvider::HOME);
+            return redirect()->intended(RouteServiceProvider::MYPAGE)->with('result', 'ログインしました');
         }
 
         // 認証メールを送信
@@ -44,7 +43,7 @@ class EmailVerificationController extends Controller
         $user = $request->user();
         // 既にメール認証済みの場合はそのままホーム画面へ遷移
         if ($user->hasVerifiedEmail()) {
-            return redirect()->intended(RouteServiceProvider::HOME);
+            return redirect()->intended(RouteServiceProvider::MYPAGE)->with('result', 'ログインしました');
         }
 
         // メール認証済みでない場合はemail_verified_atカラムに認証日時を入力後にThanksページへ遷移

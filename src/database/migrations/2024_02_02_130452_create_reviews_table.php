@@ -19,19 +19,19 @@ class CreateReviewsTable extends Migration
             $table->integer('shop_id')->unsigned();
             $table->string('review');
             $table->string('comment')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');           
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('shop_id')->references('id')->on('shops');
             $table->timestamps();
         });
     }
 
-     /**
+    /**
      * Reverse the migrations.
      *
      * @return void
      */
-    
-     public function down()
+
+    public function down()
     {
         Schema::dropIfExists('reviews');
     }

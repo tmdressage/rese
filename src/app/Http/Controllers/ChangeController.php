@@ -14,7 +14,7 @@ class ChangeController extends Controller
         $shop = Shop::find($shop_id);
 
         if (!$reservation) {
-            return Redirect('/mypage')->with('result', '選択した飲食店の予約情報が登録されていません');
+            return redirect('mypage')->with('error', '選択した飲食店の予約情報が登録されていません');
         } else {
 
             return view('change', compact('reservation', 'shop'));
@@ -38,7 +38,7 @@ class ChangeController extends Controller
             );
             return redirect('done');
         } catch (\Throwable $th) {
-            return redirect('mypage')->with('result', '予期せぬエラーが発生しました');
+            return redirect('mypage')->with('error', '予期せぬエラーが発生しました');
         }
     }
 }

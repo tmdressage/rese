@@ -20,7 +20,6 @@ class HomeController extends Controller
         return redirect('/');
     }
 
-
     public function getSelect(Request $request)
     {
         $area = $request->input('area');

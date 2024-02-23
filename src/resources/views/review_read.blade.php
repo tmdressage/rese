@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="review-read__title">
-    <button class="back_button" type="button" onclick="history.back()">＜
+    <button class="back-button" type="button" onclick="history.back()">＜
     </button>
     <p class="title">【{{ $shop->shop_name }}】のレビュー</p>
 </div>
