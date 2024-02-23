@@ -3,7 +3,7 @@
     padding-top: 40px;
 }
 
-.alert {
+.alert__content--error {
     height: 40px;
     padding-top: 10px;
     text-align: center;

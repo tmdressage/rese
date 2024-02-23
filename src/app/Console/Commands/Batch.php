@@ -40,12 +40,12 @@ class Batch extends Command
      */
     public function handle()
     {
-        // 予約日が今日のレコードを抽出
+        // 予約日が当日のレコードを抽出
         $today = Carbon::today();
-        $reservations = Reservation::join('users', 'users.id', '=', 'user_id')->join('shops', 'shops.id', '=', 'shop_id')->whereDate('reserve_datetime', $today)->select('user_id', 'name', 'email', 'shop_name','reserve_datetime','reserve_number')->get();
-        // 予約日が今日のレコードを持つユーザにリマインドメールを送信
+        $reservations = Reservation::join('users', 'users.id', '=', 'user_id')->join('shops', 'shops.id', '=', 'shop_id')->whereDate('reserve_datetime', $today)->select('user_id', 'name', 'email', 'shop_name', 'reserve_datetime', 'reserve_number')->get();
+        // 予約日が当日のレコードを持つユーザにリマインドメールを送信
         foreach ($reservations as $reservation) {
-            Mail::send('reminder',['reservation' => $reservation], function ($message) use ($reservation) {
+            Mail::send('reminder', ['reservation' => $reservation], function ($message) use ($reservation) {
                 $message->to($reservation->email)->subject('【Rese】ご予約当日リマインドメール');
             });
         }

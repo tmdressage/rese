@@ -8,11 +8,17 @@
 <div class="mypage__login-name">
     <p class="login-name">{{ Auth::user()->name }}さん</p>
 </div>
-@if (session('result'))
-<div class="alert">
-    {{ session('result') }}
+<div class="alert__content">
+    @if (session('result'))
+    <div class="alert__content--success">
+        {{ session('result') }}
+    </div>
+    @elseif (session('error'))
+    <div class="alert__content--error">
+        {{ session('error') }}
+    </div>
+    @endif
 </div>
-@endif
 <div class="mypage__content">
     <div class="mypage__reservation">
         <div class="mypage__reservation--text">予約状況</div>
@@ -108,7 +114,7 @@
         @if($shop->already_favorite())
         <div class="shop-card">
             <div class="card-img">
-                <img class="shop-img" src="{{ $shop->shop_img }}" alt="shop">
+                <img class="shop-img" src="{{ asset($shop->shop_img) }}" alt="shop">
             </div>
             <div class="card-text">
                 <h3 class="shop-name">{{ $shop->shop_name }}</h3>
@@ -125,6 +131,7 @@
                     </form>
                 </div>
                 <form action="{{ route('review_read', ['shop_id' => $shop->id]) }}" method="get">
+                    @csrf
                     <div class="review-read">
                         <button class="review-read-button" type="submit" name="review">★</button>
                         <p class="tooltip">レビュー閲覧</p>

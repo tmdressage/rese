@@ -19,13 +19,14 @@ class FavoriteController extends Controller
             favorite::create([
                 'user_id' => $user_id,
                 'shop_id' => $shop_id
-            ]);    
-
+            ]);
+        return redirect()->back();
         } else {
             // お気に入り登録されていたらレコードを削除（お気に入り解除）
-            favorite::where('shop_id', $shop_id)->where('user_id', $user_id)->delete();          
+            favorite::where('shop_id', $shop_id)->where('user_id', $user_id)->delete();
+        return redirect()->back();
         }
 
-        return redirect()->back();
+
     }
 }

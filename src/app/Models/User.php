@@ -21,6 +21,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
+        'role',
+        'owner_shop_id',
     ];
 
     /**
@@ -47,12 +49,12 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Reservation::class);
     }
 
-     public function favorites()
+    public function favorites()
     {
         return $this->hasMany(Favorite::class);
     }
 
-         public function reviews()
+    public function reviews()
     {
         return $this->hasMany(Review::class);
     }
@@ -61,5 +63,4 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $this->notify(new \App\Notifications\CustomVerifyEmail());
     }
-
 }

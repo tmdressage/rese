@@ -22,7 +22,7 @@ class ReservationRequest extends FormRequest
      * @return array
      */
     public function rules()
-    {              
+    {
         return [
             'reserve_date' => ['required', 'after:today'],
             'reserve_time' => ['required'],

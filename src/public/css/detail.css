@@ -39,8 +39,8 @@
 }
 
 .detail__shop-img img {
-    width: 85%;
-    height: 85%;
+    width: 530px;
+    height: 350px;
 }
 
 .detail__shop-tag {
@@ -58,7 +58,7 @@
 }
 
 .detail__shop-text {
-    width: 85%;
+    width: 525px;
     font-size: 15px;
     font-weight: bold;
     margin-top: 10px;
@@ -101,7 +101,7 @@
 }
 
 .input-date {
-    font-family: "Nunito", sans-serif;
+    font-family: "Arial", sans-serif;
     border-radius: 3px;
     width: 150px;
     height: 25px;

@@ -23,12 +23,11 @@ class ReviewFactory extends Factory
     {
         return [
 
-            'user_id'=> $this->faker->numberBetween(1,10),
-            'shop_id'=> $this->faker->numberBetween(1,20),
+            'user_id' => $this->faker->numberBetween(22, 31),
+            'shop_id' => $this->faker->numberBetween(1, 20),
             'review' => $this->faker->numberBetween(1, 5),
             'comment' => $this->faker->realText(80),
-            'created_at' => $this->faker->dateTimeBetween('-2 week', '-1 week'),           
+            'created_at' => $this->faker->dateTimeBetween('-2 week', '-1 week'),
         ];
     }
- 
 }

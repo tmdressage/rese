@@ -32,7 +32,7 @@ class MypageController extends Controller
             return redirect('mypage');
             // 予約キャンセルボタンを押したらDBから予約を削除
         } else {
-            return redirect('mypage')->with('result', '予期せぬエラーが発生しました');
+            return redirect('mypage')->with('error', '予期せぬエラーが発生しました');
             // DBに該当の予約が見つからなかった場合の処理
         }
     }

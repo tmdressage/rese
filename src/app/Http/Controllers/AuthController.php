@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
-use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\RegisterRequest;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -18,9 +18,18 @@ class AuthController extends Controller
     public function postLogin(LoginRequest $request)
     {
         if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
-            return redirect('mypage');
+
+            $role = Auth::user()->role;
+            //ユーザの持つ権限ごとにリダイレクト先を分岐
+            if ($role == '1') {
+                return redirect('admin')->with('result', 'ログインしました');
+            } elseif ($role == '2') {
+                return redirect('owner')->with('result', 'ログインしました');
+            } else {
+                return redirect('mypage')->with('result', 'ログインしました');
+            }
         } else {
-            return redirect('login')->with('result', 'メールアドレスまたはパスワードが間違っています');
+            return redirect('login')->with('error', 'メールアドレスまたはパスワードが間違っています');
         }
     }
 
@@ -41,9 +50,8 @@ class AuthController extends Controller
             Auth::attempt(['email' => $request['email'], 'password' => $request['password']]);
 
             return redirect('thanks');
-
         } catch (\Throwable $th) {
-            return redirect('register')->with('result', '予期せぬエラーが発生しました');
+            return redirect('register')->with('error', '予期せぬエラーが発生しました');
         }
     }
 
@@ -55,7 +63,7 @@ class AuthController extends Controller
     public function getLogout()
     {
         Auth::logout();
-        return redirect('login');
+        return redirect('login')->with('result', 'ログアウトしました');
     }
 
     public function logoutGetRegister()

@@ -39,8 +39,8 @@
 }
 
 .review__shop-img img {
-    width: 85%;
-    height: 85%;
+    width: 530px;
+    height: 350px;
 }
 
 .review__shop-tag {
@@ -58,7 +58,7 @@
 }
 
 .review__shop-text {
-    width: 85%;
+    width: 525px;
     font-size: 15px;
     font-weight: bold;
     margin-top: 10px;

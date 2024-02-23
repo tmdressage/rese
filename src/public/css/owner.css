@@ -1,0 +1,289 @@
+.mypage__login-name {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.login-name,
+.title {
+    margin: 0px 0px 10px 0px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.alert__content {
+    height: 50px;
+}
+
+.alert__content--success {
+    height: 40px;
+    padding-top: 10px;
+    text-align: center;
+    border-color: #badbcc;
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.alert__content--error {
+    height: 40px;
+    padding-top: 10px;
+    text-align: center;
+    border-color: #f5c2c7;
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.owner__content {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.owner__content.open {
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.owner__shop--registration {
+    margin: 0 auto;
+    width: 500px;
+    height: 450px;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.owner__shop--title {
+    margin: 0 auto;
+    height: 50px;
+    width: 500px;
+    background-color: #345efd;
+    color: #fff;
+    font-size: 20px;
+    padding-left: 15px;
+    line-height: 50px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.owner__shop--form {
+    margin: 0 auto;
+    height: 400px;
+    width: 500px;
+    background-color: #fff;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.form {
+    padding-top: 15px;
+    margin: 0 auto;
+    width: 450px;
+    text-align: center;
+}
+
+.form__group {
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.form__group--icon {
+    height: 40px;
+    width: 40px;
+}
+
+.icon-name {
+    width: 30px;
+    height: 25px;
+    margin-top: 3px;
+}
+
+.icon-img {
+    width: 35px;
+    height: 35px;
+}
+
+.icon-area {
+    width: 30px;
+    height: 30px;
+    margin-top: 3px;
+}
+
+.icon-genre {
+    width: 27px;
+    height: 27px;
+    margin-top: 5px;
+}
+
+.icon-text {
+    width: 30px;
+    height: 35px;
+}
+
+.form__error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+    font-size: 15px;
+}
+
+.form__input--text input {
+    padding-left: 4px;
+    width: 390px;
+    height: 30px;
+    border: 1px solid#fff;
+    border-bottom: 2px solid gray;
+    appearance: none;
+    font-size: 15px;
+    color: grey;
+}
+
+.form__input {
+    display: flex;
+}
+
+.text {
+    margin: 0;
+    text-align: left;
+    padding-left: 4px;
+    font-family: "Arial", sans-serif;
+    width: 95px;
+    height: 30px;
+    border: 1px solid#fff;
+    border-bottom: 2px solid gray;
+    appearance: none;
+    font-size: 15px;
+    color: gray;
+}
+
+.form__input input {
+    width: 300px;
+    height: 30px;
+    border: 1px solid#fff;
+    border-bottom: 2px solid gray;
+    appearance: none;
+    font-size: 15px;
+    color: grey;
+}
+
+.introduction {
+    padding-left: 4px;
+    font-size: 15px;
+    font-family: "Arial", sans-serif;
+    resize: none;
+    color: grey;
+    overflow-y: scroll;
+    border-radius: 3px;
+    border: 2px solid gray;
+}
+
+.form__button {
+    margin-right: 15px;
+    text-align: right;
+}
+
+.form__button--submit {
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #345efd;
+    cursor: pointer;
+}
+
+.form__button--text {
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+}
+
+.search-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.select-area {
+    font-size: 15px;
+    color: gray;
+    background-color: #fff;
+    height: 30px;
+    width: 150px;
+    border: none;
+    border-bottom: solid 2px gray;
+}
+
+.search-genre {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.select-genre {
+    font-size: 15px;
+    color: gray;
+    background-color: #fff;
+    height: 30px;
+    width: 150px;
+    border: none;
+    border-bottom: solid 2px gray;
+}
+
+.owner__shop--preview {
+    margin: 0px 0px 0px 45px;
+    width: 600px;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.owner__shop--preview-title {
+    margin: 0 auto;
+    height: 50px;
+    width: 600px;
+    background-color: #345efd;
+    color: #fff;
+    font-size: 20px;
+    padding-left: 15px;
+    line-height: 50px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.owner__shop--detail {
+    margin: 0 auto;
+    padding-top: 15px;
+    height: 400px;
+    width: 550px;
+}
+
+.detail__shop-name {
+    margin: 0px 0px 10px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.detail__shop-img img {
+    height: 200px;
+    width: 250px;
+}
+
+.detail__shop-tag {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.shop-area {
+    display: inline-block;
+}
+
+.shop-genre {
+    display: inline-block;
+}
+
+.detail__shop-text {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 5px;
+}

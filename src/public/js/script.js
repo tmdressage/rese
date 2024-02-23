@@ -1,7 +1,7 @@
 $(function () {
     $(".header__menu--button").on("click", function () {
         $(
-            ".menu, .header__menu--button, .header__menu--button-line,.review-read-button, .favorite-button, .tooltip, .detail__reservation, .change__reservation, .review__reservation,.review-read__content, .reservation-content"
+            ".menu, .header__menu--button, .header__menu--button-line,.review-read-button, .favorite-button, .tooltip, .detail__reservation, .change__reservation, .review__reservation,.review-read__content, .reservation-content, .owner__content, .reservation-status__content"
         ).toggleClass("open");
     });
 });
@@ -134,6 +134,13 @@ $(function () {
 
 $(function () {
     $(".comment").on("click", function () {
+        var result = $(this).val();
+        console.log(result);
+    });
+});
+
+$(function () {
+    $(".introduction").on("click", function () {
         var result = $(this).val();
         console.log(result);
     });

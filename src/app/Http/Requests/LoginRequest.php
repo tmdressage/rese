@@ -41,5 +41,4 @@ class LoginRequest extends FormRequest
             'password.max' => '! パスワードを191文字以下で入力してください。',
         ];
     }
-
 }

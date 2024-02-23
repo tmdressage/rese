@@ -23,10 +23,9 @@ class FavoriteFactory extends Factory
     {
         return [
 
-            'user_id'=> $this->faker->numberBetween(1,10),
-            'shop_id'=> $this->faker->numberBetween(1,20),
-           
+            'user_id' => $this->faker->numberBetween(22, 31),
+            'shop_id' => $this->faker->numberBetween(1, 20),
+
         ];
     }
- 
 }

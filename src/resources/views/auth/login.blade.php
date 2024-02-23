@@ -7,8 +7,12 @@
 @section('content')
 <div class="alert__content">
     @if (session('result'))
-    <div class="alert">
+    <div class="alert__content--success">
         {{ session('result') }}
+    </div>
+    @elseif (session('error'))
+    <div class="alert__content--error">
+        {{ session('error') }}
     </div>
     @endif
 </div>
@@ -52,7 +56,6 @@
                     <p class="form__button--text">ログイン</p>
                 </button>
             </div>
-            @csrf
         </form>
     </div>
 </div>
