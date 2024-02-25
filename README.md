@@ -153,7 +153,6 @@ docker-compose.ymlと.envにmailhog用の設定を追加いたしました。
 <br>
 ![Screenshot 2024-02-25 161043](https://github.com/tmdressage/rese/assets/144135026/25590e05-c9c7-425d-a671-f415e8f4403e)<br>
 <br>
-___
 <br>
 **・メール認証**<br>
 ⇒メールの送信先は、開発用のメールサーバmailhogを使用しております。<br>
@@ -163,7 +162,6 @@ ___
 <br>
 ![Screenshot 2024-02-25 143344](https://github.com/tmdressage/rese/assets/144135026/c6fd0aa2-fed3-4067-9208-e6fc641e2879)<br>
 <br>
-___
 <br>
 **・予約当日リマインダー送信**<br>
 ⇒メールの送信先は、開発用のメールサーバmailhogを使用しております。<br>
