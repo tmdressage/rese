@@ -26,7 +26,7 @@ class ReviewRequest extends FormRequest
 
         return [
             'review' => ['required'],
-            'comment' => ['max:500'], //コメントは任意入力
+            'comment' => ['max:180'], //コメントは任意入力
         ];
     }
 
@@ -34,7 +34,7 @@ class ReviewRequest extends FormRequest
     {
         return [
             'review.required' => '! レビューが設定されていません。',
-            'comment.max' => '! コメントは500字以内で入力してください。',
+            'comment.max' => '! コメントは180字以内で入力してください。',
         ];
     }
 }

@@ -13,13 +13,12 @@ class AddColumnRoleUsersTable extends Migration
      */
     public function up()
     {
+        Schema::table('users', function (Blueprint $table) {
         //権限を作成するためにroleカラムを追加。デフォルトは0(一般ユーザ用)とする。
-        Schema::table('users', function (Blueprint $table) {
             $table->tinyInteger('role')->default(0)->after('password');
-        });
-        //店舗代表者用に、店舗を割り当てるためのカラムを追加。
-        Schema::table('users', function (Blueprint $table) {
-            $table->Integer('owner_shop_id')->after('role')->nullable();
+        //店舗代表者用に店舗を割り当てるための外部キーカラムを追加。shop_idと紐付け。
+            $table->Integer('owner_shop_id')->unsigned()->after('role')->nullable();
+            $table->foreign('owner_shop_id')->references('id')->on('shops');
         });
     }
 

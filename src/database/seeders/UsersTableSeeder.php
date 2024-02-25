@@ -21,7 +21,6 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('PasswordPassword'),
             'role' => '1',
-            'owner_shop_id' => '0',
             'remember_token' => 'AdminAdmin',
         ]);
 

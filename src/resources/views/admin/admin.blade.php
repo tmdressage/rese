@@ -86,7 +86,7 @@
                 <div class="owner__content--text">
                     <table class="owner-text">
                         <tr>
-                            <td class="id">id</td>
+                            <td class="id">owner_shop_id</td>
                             <td class="ownername">Ownername</td>
                             <td class="email">Email</td>
                         </tr>
@@ -103,6 +103,7 @@
                         @endforeach
                     </table>
                 </div>
+                <p class="owner__content--memo">※owner_shop_idは店舗代表者が店舗情報を作成すると採番されます。</p>
             </div>
         </div>
     </div>

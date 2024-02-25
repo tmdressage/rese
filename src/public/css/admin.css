@@ -144,7 +144,7 @@
 
 .admin__owner-list {
     margin: 0px 0px 0px 45px;
-    width: 650px;
+    width: 700px;
     flex-direction: column;
     border-radius: 10px;
     box-shadow: 2px 2px 5px gray;
@@ -153,7 +153,7 @@
 .owner__title {
     margin: 0 auto;
     height: 50px;
-    width: 650px;
+    width: 700px;
     background-color: #345efd;
     color: #fff;
     font-size: 20px;
@@ -166,7 +166,7 @@
 .owner__form {
     margin: 0 auto;
     height: 300px;
-    width: 650px;
+    width: 700px;
     background-color: #fff;
     border-radius: 0px 0px 10px 10px;
 }
@@ -174,8 +174,8 @@
 .owner__content {
     margin: 0 auto;
     padding: 15px 15px 15px 15px;
-    height: 300px;
-    width: 650px;
+    height: 340px;
+    width: 700px;
     background-color: #345efd;
     border-radius: 0px 0px 10px 10px;
     box-shadow: 2px 2px 5px gray;
@@ -189,14 +189,14 @@
 }
 
 .owner__content--text {
-    width: 620px;
+    width: 670px;
     padding-left: 15px;
     background-color: #4f7ffd;
 }
 
 .owner-text {
     color: #fff;
-    width: 575px;
+    width: 625px;
 }
 
 .owner__content--table {
@@ -209,21 +209,25 @@
 
 .owner-table {
     color: #fff;
-    width: 575px;
+    width: 625px;
     border-collapse: collapse;
 }
 
 .id {
-    width: 40px;
+    width: 100px;
     border-bottom: 1px solid #dddddd;
 }
 
 .ownername {
-    width: 140px;
+    width: 120px;
     border-bottom: 1px solid #dddddd;
 }
 
 .email {
     width: 220px;
     border-bottom: 1px solid #dddddd;
+}
+
+.owner__content--memo {
+    color: #fff;
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\OwnerRequest;
+use App\Models\User;
 use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
 
@@ -52,7 +53,6 @@ class OwnerController extends Controller
         } else {
             try {
                 Shop::create([
-                    'id' => $ownerShopId,
                     'shop_name' => $shop_name,
                     'shop_img' => $shop_img,
                     'shop_area' => $shop_area,
@@ -60,10 +60,17 @@ class OwnerController extends Controller
                     'shop_text' => $shop_text,
                 ]);
 
-                return redirect('owner')->with('result', '店舗情報を登録しました');
             } catch (\Throwable $th) {
                 return redirect('owner')->with('error', '予期せぬエラーが発生しました');
             }
+
+            $create_shop = Shop::latest()->first();
+
+            User::where('id', '=', $user->id)->update([
+                'owner_shop_id' => $create_shop->id
+            ]);
+
+            return redirect('owner')->with('result', '店舗情報を登録しました');
         }
     }
 }
