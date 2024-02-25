@@ -72,7 +72,7 @@ dockerやlaravelの環境構築方法(セットアップ方法) <br>
 コマンドライン上
 $ cd coachtech/laravel
 $ git clone git@github.com:tmdressage/rese.git
-$ mv rese (任意のディレクトリ名)
+$ mv rese 任意のディレクトリ名
 ```
 
 <br>
@@ -85,7 +85,7 @@ $ mv rese (任意のディレクトリ名)
 
 ```
 コマンドライン上
-$ cd ⓵で作成したリポジトリ名
+$ cd ⓵で作成したディレクトリ名
 $ git remote set-url origin ⓶で作成したリモートリポジトリのSSHのurl
 $ git remote -v
 ```
@@ -107,7 +107,7 @@ $ git push origin main
 
 ```
 コマンドライン上
-$ cd (1‐⓵で作成した任意のディレクトリ名)
+$ cd 1‐⓵で作成した任意のディレクトリ名
 $ docker-compose up -d --build
 $ code .
 ```
