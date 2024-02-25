@@ -63,11 +63,10 @@ WEBサーバソフトウェア：nginx 1.21.1<br>
 dockerやlaravelの環境構築方法(セットアップ方法) <br>
 <br>
 **リポジトリの設定**<br>
-※自身でGitHubに開発履歴を残さない場合は、工程１のクローンだけ行います。
+※自身でGitHubに開発履歴を残さない場合は、工程１のクローンだけ行います。<br>
 <br>
 1、開発環境をGitHub からクローンする<br>
 ※~/coachtechディレクトリ配下のlaravelディレクトリで作業を行う場合を想定して記載します。<br>
-<br>
 ```
 $ cd coachtech/laravel
 $ git clone git@github.com:tmdressage/rese.git
