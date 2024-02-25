@@ -57,20 +57,55 @@ WEBサーバソフトウェア：nginx 1.21.1<br>
 
 ## ER図
 ![Screenshot 2024-02-25 141811](https://github.com/tmdressage/rese/assets/144135026/46ee270d-2ae7-49af-96cd-5f8f414e2b5f)<br>
-※中間テーブルの名称につきましては、担当コーチに確認の上、上記の名称で作成しております。
+※中間テーブルの名称につきましては、担当コーチに相談のもと上記の名称で作成しております。
 
 ## 環境構築
 dockerやlaravelの環境構築方法(セットアップ方法) <br>
 <br>
 **リポジトリの設定**<br>
-
+※自身でGitHubに開発履歴を残さない場合は、工程１のクローンだけ行います。
+<br>
+1、開発環境をGitHub からクローンする<br>
+※~/coachtechディレクトリ配下のlaravelディレクトリで作業を行う場合を想定して記載します。<br>
+<br>
 ```
 $ cd coachtech/laravel
-$ git clone git@github.com:coachtech-material/laravel-docker-template.git
-$ mv laravel-docker-template todo
+$ git clone git@github.com:tmdressage/rese.git
+$ mv rese リポジトリ名
 ```
+<br>
+<br>
+2、 GitHubでリモートリポジトリをpublicで作成する<br>
+※リポジトリ名は前項で作成したリポジトリ名を使用します。<br>
+<br>
+<br>
+3、 リポジトリの紐付け先を変更する<br>
+<br>
+```
+$ cd 1で作成したリポジトリ名
+$ git remote set-url origin 2で作成したリモートリポジトリのurl
+$ git remote -v　//URLの紐付けが合っているかを確認
+```
+<br>
+<br>
+4、 ローカルリポジトリにあるデータを2で作成したリモートリポジトリに反映させる<br>
+<br>
+```
+$ git add .
+$ git commit -m "リモートリポジトリの変更"
+$ git push origin main
+```
+<br>
+<br>
+**Docker の設定**<br>
 
-リポジトリの設定
+
+
+
+
+
+
+
 Docker の設定
 Laravel のパッケージのインストール
 .env ファイルの作成
