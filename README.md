@@ -1,3 +1,4 @@
+2024/2/26新規作成
 # アプリケーション名
 Rese（飲食店予約サービス）
 
@@ -360,8 +361,8 @@ Permission denied」<br>
 <br>
 <br>
 **・飲食店画像のストレージ保存**<br>
-⇒飲食店情報作成時に、画像をアップロードいただくと、サーバのstorage/app/public/img配下に画像が保存され、<br>
-　DBにもパスが格納されます。<br>
+⇒飲食店情報作成時に、画像をアップロードいただくと、storage/app/public/img配下に画像が保存され、<br>
+　DBにパスが格納されます。<br>
 　シンボリックリンクにより、出力時はパスを参照して保存した画像が表示されます。<br>
 <br>
 ![Screenshot 2024-02-25 160830](https://github.com/tmdressage/rese/assets/144135026/627ee2b0-f00d-42ca-9119-46fab20a02cc)<br>
