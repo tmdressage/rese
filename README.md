@@ -67,7 +67,6 @@ dockerやlaravelの環境構築方法(セットアップ方法) <br>
 <br>
 1、開発環境をGitHub からクローンする<br>
 ※~/coachtechディレクトリ配下のlaravelディレクトリで作業を行う場合を想定して記載します。
-
 ```
 $ cd coachtech/laravel
 $ git clone git@github.com:tmdressage/rese.git
