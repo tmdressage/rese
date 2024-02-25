@@ -65,6 +65,7 @@ dockerやlaravelの環境構築方法(セットアップ方法) <br>
 **1.リポジトリの設定**<br>
 ※自身でGitHubに開発履歴を残さない場合は、工程⓵のクローンだけ行います。<br>
 <br>
+<br>
 ⓵開発環境をGitHub からクローンする<br>
 ※~/coachtechディレクトリ配下のlaravelディレクトリで作業を行う場合を想定して記載します。<br>
 ```
@@ -84,7 +85,7 @@ $ mv rese 変更先のリポジトリ名(任意)
 ```
 コマンドライン上
 $ cd ⓵で作成したリポジトリ名
-$ git remote set-url origin ⓶で作成したリモートリポジトリのurl
+$ git remote set-url origin ⓶で作成したリモートリポジトリのSSHのurl
 $ git remote -v
 ```
 
@@ -113,9 +114,10 @@ $ code .
 ※Docker Desktopで新しいコンテナが作成されていれば成功です。
 <br>
 <br>
+
 **3.Laravelの設定**<br>
 <br>
-⓵Laravel のパッケージをインストールする
+⓵Laravel のパッケージをインストールする<br>
 ```
 コマンドライン上
 $ docker-compose exec php bash
@@ -194,9 +196,6 @@ PUSHER_APP_CLUSTER=mt1
 MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
 MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 ```
-<br>
-<br>
-以上でございます。
 
 ## その他
 以下、補足事項でございます。<br>
