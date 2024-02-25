@@ -62,7 +62,7 @@ WEBサーバソフトウェア：nginx 1.21.1<br>
 ## 環境構築
 dockerやlaravelの環境構築方法(セットアップ方法) <br>
 <br>
-**1.リポジトリの設定**<br>
+**1、リポジトリの設定**<br>
 ※自身でGitHubに開発履歴を残さない場合は、工程⓵のクローンだけ行います。<br>
 <br>
 <br>
@@ -79,6 +79,7 @@ $ mv rese 変更先のリポジトリ名(任意)
 ⓶GitHubでリモートリポジトリをpublicで作成する<br>
 ※リポジトリ名は前項で作成したリポジトリ名を使用します。<br>
 
+<br>
 <br>
 ⓷リポジトリの紐付け先を変更する<br>
 
@@ -102,7 +103,7 @@ $ git push origin main
 <br>
 <br>
 
-**2.Dockerの設定**<br>
+**2、Dockerの設定**<br>
 <br>
 ⓵Dockerの環境を構築する<br>
 
@@ -115,7 +116,7 @@ $ code .
 <br>
 <br>
 
-**3.Laravelの設定**<br>
+**3、Laravelの設定**<br>
 <br>
 ⓵Laravel のパッケージをインストールする<br>
 ```
@@ -127,9 +128,8 @@ $ docker-compose exec php bash
 $ composer install
 ```
 <br>
-<br>
 
-**4. .envファイルの作成**<br>
+**4、.envファイルの作成**<br>
 <br>
 ⓵.env.exampleファイルをコピーして作成する<br>
 ```
