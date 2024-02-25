@@ -99,8 +99,6 @@ $ git add .
 $ git commit -m "リモートリポジトリの変更"
 $ git push origin main
 ```
-
-<br>
 <br>
 
 **2、Dockerの設定**<br>
@@ -139,7 +137,7 @@ $ cp .env.example .env
 ```
 <br>
 ⓶以下のコードを.envファイルに上書きで貼り付ける<br>
-
+※変更箇所はDBとメールの箇所です。
 ```
 APP_NAME=Laravel
 APP_ENV=local
