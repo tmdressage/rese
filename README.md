@@ -5,9 +5,13 @@ Rese（飲食店予約サービス）
 上級模擬案件提出用
  
 ## アプリケーションURL
-http://localhost/login<br>  
+http://localhost/login<br>
+<br>
 ※本人認証メールとリマインダーはmailhogに送信されます。<br>
-http://localhost:8025
+http://localhost:8025<br>
+<br>
+※PhpMyAdmin<br>
+http://localhost:8080/
 
 ## 他のリポジトリ  
 無し
@@ -60,8 +64,6 @@ WEBサーバソフトウェア：nginx 1.21.1<br>
 ※中間テーブルの名称につきましては、担当コーチに相談のもと上記の名称で作成しております。
 
 ## 環境構築
-dockerやlaravelの環境構築方法(セットアップ方法) <br>
-<br>
 **1、リポジトリの設定**<br>
 ※自身でGitHubに開発履歴を残さない場合は、下記の工程⓵のみ行います。<br>
 <br>
@@ -109,9 +111,8 @@ $ git push origin main
 コマンドライン上
 $ cd 工程1‐⓵で作成した任意のディレクトリ名
 $ docker-compose up -d --build
-$ code .
 ```
-※Docker Desktopで新しいコンテナが作成されていれば成功です。
+※Docker Desktopでディレクトリ名のコンテナが作成され、起動していれば成功です。
 <br>
 <br>
 
@@ -134,6 +135,7 @@ $ exit
 ⓵.env.exampleファイルをコピーして作成する<br>
 ```
 コマンドライン上
+$ cd src/
 $ cp .env.example .env
 ```
 <br>
@@ -208,8 +210,54 @@ $ docker-compose exec php bash
 ```
 ※PHPコンテナ上
 $ php artisan key:generate
-$ exit
 ```
+<br>
+<br>
+
+**5、テーブルの作成**<br>
+<br>
+⓵下記コマンドでマイグレーションを行う<br>
+```
+※PHPコンテナ上
+$ php artisan migrate
+```
+
+※http://localhost:8080/ を開いてテーブルが作成出来ていれば成功です。
+<br>
+<br>
+
+**6、シーディング**<br>
+<br>
+⓵下記コマンドで初期ダミーデータを作成する<br>
+```
+※PHPコンテナ上
+$ php artisan db:seed
+```
+
+※シーディングで各テーブル(ユーザ・飲食店情報・お気に入り・予約情報・飲食店評価)のデータを作成出来ます。<br>
+　便宜上、管理者ユーザ・店舗代表者ユーザ・飲食店情報には固定のデータをDBに格納しております。<br>
+※http://localhost:8080/ を開いてテーブルにデータが格納されていれば成功です。<br>
+<br>
+<br>
+
+**7、シンボリックリンクの作成**<br>
+<br>
+⓵下記コマンドでシンボリックリンクを作成する<br>
+```
+※PHPコンテナ上
+$ php artisan storage:link
+```
+
+※飲食店情報の新規作成時に、アップロードした画像を表示させるために行います。
+<br>
+<br>
+<br>
+<br>
+以上でございます。<br>
+尚、アプリケーションにログインする際に<br>
+「The stream or file "storage/logs/laravel.log" could not be opened: failed to open stream: <br>
+Permission denied」<br>
+の権限エラーが生じた場合は、コマンドラインでsrc/storageまで移動して「chmod -R 777 .」を打つと解消します。<br>
 <br>
 
 ## その他
@@ -219,13 +267,6 @@ $ exit
 　おります(各々クリックするとログイン画面へ飛びます)。<br> 
 ・認証機能の作成にあたり、参考のためFortifyとLaravel Breezeをインストールしておりますが、<br>
 　基本は使用せずに自作いたしました。<br>
-・本人確認メールと、予約当日のリマインドメールの送信先は、開発用のメールサーバmailhogを<br>
-　使用いたしました。<br>
-・シーディングで各テーブル(ユーザ・飲食店情報・お気に入り・予約情報・飲食店評価)のデータをDBに<br>
-　格納出来ます。<br>
-　便宜上、管理者ユーザ・店舗代表者ユーザ・飲食店情報には固定のデータをDBに格納しておりますので、<br>
-　２回目にシーディングを行う際は、事前にmigrate:freshしていただけますと幸いです。<br>
-　※migrate:freshしないとメールアドレスの重複エラーが生じます。
 <br>
 <br>
 
@@ -308,6 +349,7 @@ $ exit
 **・メール認証**<br>
 ⇒メールの送信先は、開発用のメールサーバmailhogを使用しております。<br>
 　送信ボタンをクリックすると本人確認メールがmailhogに送信されます。<br>
+　http://localhost:8025<br>
 <br>
 ![Screenshot 2024-02-25 143204](https://github.com/tmdressage/rese/assets/144135026/e37fe2b9-8321-4d51-8920-5172044e6dee)<br>
 <br>
@@ -320,6 +362,7 @@ $ exit
 　app/Console/Commands/Batch.phpで予約日が当日のレコードを持つユーザ情報を抽出し、<br>
 　cronの設定とapp/Console/Kernel.phpで該当ユーザ宛に予約当日の朝8:00にリマインダーが<br>
 　送信されるように設定しております。<br>
+　http://localhost:8025<br>
 <br>
 ![Screenshot 2024-02-25 161546](https://github.com/tmdressage/rese/assets/144135026/c2ffd1f1-ce94-4fbb-9282-9d83c671f02f)<br>
 <br>
