@@ -13,7 +13,7 @@ http://localhost:8025
 無し
 
 ## 機能一覧
-【基本機能】<br>
+### 【基本機能】<br>
 ・会員登録<br>
 ・ログイン<br>
 ・ログアウト<br>
@@ -30,7 +30,7 @@ http://localhost:8025
 ・ジャンルで検索する<br>
 ・店名で検索する<br>
 <br>
-【追加実装機能】<br>
+### 【追加実装機能】<br>
 ・飲食店予約情報変更<br>
 ・飲食店評価<br>
 ・飲食店評価閲覧<br>
@@ -73,7 +73,7 @@ docker-compose.ymlと.envにmailhog用の設定を追加いたしました。
 お手数ですがご採点の程よろしくお願い申し上げます。以下補足事項でございます。<br>
 <br>
 <br>
-【全般について】<br>
+### 【全般について】<br>
 <br>
 ・ログインをしていない状態では、お気に入り登録・評価閲覧、飲食店予約が<br>
 　出来ない仕様にしております(各々クリックするとログイン画面へ飛びます)。<br> 
@@ -87,9 +87,9 @@ docker-compose.ymlと.envにmailhog用の設定を追加いたしました。
 　再度シーディングを行う際は、事前にmigrate:freshしていただけますと幸いです。<br>
 <br>
 <br>
-【追加実装機能について】<br>
+### 【追加実装機能について】<br>
 <br>
-・飲食店予約情報変更<br>
+#### ・飲食店予約情報変更<br>
 ⇒マイページの予約情報欄の右上に表示される、開いた本のアイコンをクリックいただくと、<br>
 　飲食店予約情報変更ページに遷移いたします。<br>
 ![Screenshot 2024-02-25 153817](https://github.com/tmdressage/rese/assets/144135026/81b0f23f-d187-412b-9011-3dee73f01a97)<br>
@@ -142,21 +142,25 @@ docker-compose.ymlと.envにmailhog用の設定を追加いたしました。
 　DBにもパスが格納されます。<br>
 　シンボリックリンクにより、出力時はパスを参照して保存した画像が表示されます。<br>
 ![Screenshot 2024-02-25 160830](https://github.com/tmdressage/rese/assets/144135026/627ee2b0-f00d-42ca-9119-46fab20a02cc)<br>
+<br>
 ![Screenshot 2024-02-25 161043](https://github.com/tmdressage/rese/assets/144135026/25590e05-c9c7-425d-a671-f415e8f4403e)<br>
 <br>
 <br>
 ・メール認証<br>
 ⇒メールの送信先は、開発用のメールサーバmailhogを使用しております。<br>
-送信ボタンをクリックすると本人確認メールがmailhogに送信されます。<br>
+　送信ボタンをクリックすると本人確認メールがmailhogに送信されます。<br>
 ![Screenshot 2024-02-25 143204](https://github.com/tmdressage/rese/assets/144135026/e37fe2b9-8321-4d51-8920-5172044e6dee)<br>
+<br>
 ![Screenshot 2024-02-25 143344](https://github.com/tmdressage/rese/assets/144135026/c6fd0aa2-fed3-4067-9208-e6fc641e2879)<br>
 <br>
 <br>
 ・予約当日リマインダー送信<br>
 ⇒メールの送信先は、開発用のメールサーバmailhogを使用しております。<br>
-app/Console/Commands/Batch.phpで予約日が当日のレコードを持つユーザ情報を抽出し、<br>
-cronの設定とapp/Console/Kernel.phpで該当ユーザ宛に予約当日の朝8:00にリマインダーが送信されるように設定しております。<br>
+　app/Console/Commands/Batch.phpで予約日が当日のレコードを持つユーザ情報を抽出し、<br>
+　cronの設定とapp/Console/Kernel.phpで該当ユーザ宛に予約当日の朝8:00にリマインダーが<br>
+ 　送信されるように設定しております。<br>
 ![Screenshot 2024-02-25 161546](https://github.com/tmdressage/rese/assets/144135026/c2ffd1f1-ce94-4fbb-9282-9d83c671f02f)<br>
+<br>
 ![Screenshot 2024-02-25 161828](https://github.com/tmdressage/rese/assets/144135026/4c235f75-2145-47f1-9577-b9c6779a6c23)<br>
 <br>
 <br>
