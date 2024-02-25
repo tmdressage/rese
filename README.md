@@ -60,8 +60,14 @@ WEBサーバソフトウェア：nginx 1.21.1<br>
 ※中間テーブルの名称につきましては、担当コーチに確認の上、上記の名称で作成しております。
 
 ## 環境構築
-運営側でご用意いただいた環境（coachtech-material/laravel-docker-template.git）をベースにして、<br>
-docker-compose.ymlと.envにmailhog用の設定を追加いたしました。  
+dockerやlaravelの環境構築方法(セットアップ方法) <br>
+<br>
+**リポジトリの設定**<br>
+
+
+
+
+
 
 
 
