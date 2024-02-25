@@ -126,6 +126,7 @@ $ docker-compose exec php bash
 ```
 ※PHPコンテナ上
 $ composer install
+$ exit
 ```
 <br>
 
@@ -133,16 +134,16 @@ $ composer install
 <br>
 ⓵.env.exampleファイルをコピーして作成する<br>
 ```
+コマンドライン上
 $ cp .env.example .env
-$ exit
 ```
 <br>
-⓶以下のコードを.envファイルに貼り付ける<br>
+⓶以下のコードを.envファイルに上書きで貼り付ける<br>
 
 ```
 APP_NAME=Laravel
 APP_ENV=local
-APP_KEY=base64:xiT6hXwgOTXEfSQz//cszQFoKfmqyRlz9jPj4xZHmvg=
+APP_KEY=
 APP_DEBUG=true
 APP_URL=http://localhost
 
@@ -195,6 +196,18 @@ PUSHER_APP_CLUSTER=mt1
 
 MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
 MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+```
+
+<br>
+⓷以下のコードでAPP_KEYをセットする<br>
+```
+コマンドライン上
+$ docker-compose exec php bash
+```
+```
+※PHPコンテナ上
+$ php artisan key:generate
+$ exit
 ```
 
 ## その他
