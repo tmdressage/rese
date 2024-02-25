@@ -73,27 +73,28 @@ $ git clone git@github.com:tmdressage/rese.git
 $ mv rese リポジトリ名
 ```
 <br>
-<br>
 2、 GitHubでリモートリポジトリをpublicで作成する<br>
 ※リポジトリ名は前項で作成したリポジトリ名を使用します。<br>
 <br>
-<br>
 3、 リポジトリの紐付け先を変更する<br>
-<br>
+
 ```
 $ cd 1で作成したリポジトリ名
 $ git remote set-url origin 2で作成したリモートリポジトリのurl
 $ git remote -v　//URLの紐付けが合っているかを確認
 ```
+
 <br>
 <br>
 4、 ローカルリポジトリにあるデータを2で作成したリモートリポジトリに反映させる<br>
-<br>
+
+
 ```
 $ git add .
 $ git commit -m "リモートリポジトリの変更"
 $ git push origin main
 ```
+
 <br>
 <br>
 **Docker の設定**<br>
