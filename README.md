@@ -138,6 +138,7 @@ $ cp .env.example .env
 <br>
 ⓶以下のコードを.envファイルに上書きで貼り付ける<br>
 ※変更箇所はDBとメールの箇所です。
+
 ```
 APP_NAME=Laravel
 APP_ENV=local
@@ -198,6 +199,7 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 <br>
 ⓷以下のコードでAPP_KEYをセットする<br>
+
 ```
 コマンドライン上
 $ docker-compose exec php bash
@@ -207,6 +209,7 @@ $ docker-compose exec php bash
 $ php artisan key:generate
 $ exit
 ```
+<br>
 
 ## その他
 以下、補足事項でございます。<br>
