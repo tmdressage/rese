@@ -62,65 +62,141 @@ WEBサーバソフトウェア：nginx 1.21.1<br>
 ## 環境構築
 dockerやlaravelの環境構築方法(セットアップ方法) <br>
 <br>
-**リポジトリの設定**<br>
-※自身でGitHubに開発履歴を残さない場合は、工程１のクローンだけ行います。<br>
+**1.リポジトリの設定**<br>
+※自身でGitHubに開発履歴を残さない場合は、工程⓵のクローンだけ行います。<br>
 <br>
-1、開発環境をGitHub からクローンする<br>
-※~/coachtechディレクトリ配下のlaravelディレクトリで作業を行う場合を想定して記載します。
+⓵開発環境をGitHub からクローンする<br>
+※~/coachtechディレクトリ配下のlaravelディレクトリで作業を行う場合を想定して記載します。<br>
 ```
+コマンドライン上
 $ cd coachtech/laravel
 $ git clone git@github.com:tmdressage/rese.git
-$ mv rese リポジトリ名
+$ mv rese 変更先のリポジトリ名(任意)
 ```
 
 <br>
-2、 GitHubでリモートリポジトリをpublicで作成する<br>
+⓶GitHubでリモートリポジトリをpublicで作成する<br>
 ※リポジトリ名は前項で作成したリポジトリ名を使用します。<br>
 
 <br>
-3、 リポジトリの紐付け先を変更する<br>
+⓷リポジトリの紐付け先を変更する<br>
 
 ```
-$ cd 1で作成したリポジトリ名
-$ git remote set-url origin 2で作成したリモートリポジトリのurl
-$ git remote -v　//URLの紐付けが合っているかを確認
+コマンドライン上
+$ cd ⓵で作成したリポジトリ名
+$ git remote set-url origin ⓶で作成したリモートリポジトリのurl
+$ git remote -v
 ```
 
 <br>
-4、 ローカルリポジトリにあるデータを2で作成したリモートリポジトリに反映させる<br>
-
+⓸ローカルリポジトリにあるデータを⓶で作成したリモートリポジトリに反映させる<br>
 
 ```
+コマンドライン上
 $ git add .
 $ git commit -m "リモートリポジトリの変更"
 $ git push origin main
 ```
 
 <br>
-**Docker の設定**<br>
+<br>
 
+**2.Dockerの設定**<br>
+<br>
+⓵Dockerの環境を構築する<br>
 
+```
+コマンドライン上
+$ docker-compose up -d --build
+$ code .
+```
+※Docker Desktopで新しいコンテナが作成されていれば成功です。
+<br>
+<br>
+**3.Laravelの設定**<br>
+<br>
+⓵Laravel のパッケージをインストールする
+```
+コマンドライン上
+$ docker-compose exec php bash
+```
+```
+※PHPコンテナ上
+$ composer install
+```
+<br>
+<br>
 
+**4. .envファイルの作成**<br>
+<br>
+⓵.env.exampleファイルをコピーして作成する<br>
+```
+$ cp .env.example .env
+$ exit
+```
+<br>
+⓶以下のコードを.envファイルに貼り付ける<br>
 
+```
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:xiT6hXwgOTXEfSQz//cszQFoKfmqyRlz9jPj4xZHmvg=
+APP_DEBUG=true
+APP_URL=http://localhost
 
+LOG_CHANNEL=stack
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
 
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
 
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+FILESYSTEM_DRIVER=local
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
 
-Docker の設定
-Laravel のパッケージのインストール
-.env ファイルの作成
-view ファイルの作成
-css ファイルの作成
+MEMCACHED_HOST=127.0.0.1
 
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
 
+MAIL_MAILER=smtp
+MAIL_HOST=mail
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="admin@rese.com"
+MAIL_FROM_NAME="Rese"
 
+WWWGROUP=1000
+WWWUSER=1000
 
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+AWS_USE_PATH_STYLE_ENDPOINT=false
 
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=mt1
 
-
-
-
-
+MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+```
+<br>
+<br>
+以上でございます。
 
 ## その他
 以下、補足事項でございます。<br>
@@ -132,10 +208,13 @@ css ファイルの作成
 　基本は使用せずに自作いたしました。<br>
 ・本人確認メールと、予約当日のリマインドメールの送信先は、<br>
 　開発用のメールサーバmailhogを使用いたしました。<br>
-・シーディングで各テーブル(ユーザ・飲食店情報・お気に入り・予約情報・飲食店評価)に<br>
-　データをDBに格納しております。<br>
+・シーディングで各テーブル(ユーザ・飲食店情報・お気に入り・予約情報・飲食店評価)のデータを<br>
+　DBに格納出来ます。<br>
 　便宜上、管理者ユーザ・店舗代表者ユーザ・飲食店情報には固定のデータをDBに格納しておりますので、<br>
-　再度シーディングを行う際は、事前にmigrate:freshしていただけますと幸いです。<br>
+　２回目にシーディングを行う際は、事前にmigrate:freshしていただけますと幸いです。<br>
+　※migrate:freshしないとメールアドレスの重複エラーが生じます。
+ 
+<br> 
 <br>
 <br>
 **追加実装機能について**<br>
