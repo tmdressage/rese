@@ -64,9 +64,12 @@ dockerやlaravelの環境構築方法(セットアップ方法) <br>
 <br>
 **リポジトリの設定**<br>
 
-```$ cd coachtech/laravel
+```
+$ cd coachtech/laravel
 $ git clone git@github.com:coachtech-material/laravel-docker-template.git
-$ mv laravel-docker-template todo```
+$ mv laravel-docker-template todo
+```
+
 リポジトリの設定
 Docker の設定
 Laravel のパッケージのインストール
