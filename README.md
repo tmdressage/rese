@@ -13,7 +13,7 @@ http://localhost:8025
 無し
 
 ## 機能一覧
-### 【基本機能】<br>
+**基本機能**<br>
 ・会員登録<br>
 ・ログイン<br>
 ・ログアウト<br>
@@ -30,7 +30,7 @@ http://localhost:8025
 ・ジャンルで検索する<br>
 ・店名で検索する<br>
 <br>
-### 【追加実装機能】<br>
+**追加実装機能**<br>
 ・飲食店予約情報変更<br>
 ・飲食店評価<br>
 ・飲食店評価閲覧<br>
@@ -73,7 +73,7 @@ docker-compose.ymlと.envにmailhog用の設定を追加いたしました。
 お手数ですがご採点の程よろしくお願い申し上げます。以下補足事項でございます。<br>
 <br>
 <br>
-### 【全般について】<br>
+**全般について**<br>
 <br>
 ・ログインをしていない状態では、お気に入り登録・評価閲覧、飲食店予約が<br>
 　出来ない仕様にしております(各々クリックするとログイン画面へ飛びます)。<br> 
@@ -87,57 +87,57 @@ docker-compose.ymlと.envにmailhog用の設定を追加いたしました。
 　再度シーディングを行う際は、事前にmigrate:freshしていただけますと幸いです。<br>
 <br>
 <br>
-### 【追加実装機能について】<br>
+**追加実装機能について**<br>
 <br>
-#### ・飲食店予約情報変更<br>
+**・飲食店予約情報変更**<br>
 ⇒マイページの予約情報欄の右上に表示される、開いた本のアイコンをクリックいただくと、<br>
 　飲食店予約情報変更ページに遷移いたします。<br>
 ![Screenshot 2024-02-25 153817](https://github.com/tmdressage/rese/assets/144135026/81b0f23f-d187-412b-9011-3dee73f01a97)<br>
 <br>
 <br>
-・飲食店評価<br>
+**・飲食店評価**<br>
 ⇒マイページの予約情報欄(過去日時の予約)の右上に表示される、星のアイコンをクリックいただくと、<br>
 　飲食店評価ページに遷移いたします。<br>  
 ![Screenshot 2024-02-25 154146](https://github.com/tmdressage/rese/assets/144135026/c82de71b-9fb5-4a90-b1af-719bd6378764)<br>
 <br>
 <br>
-・飲食店評価閲覧<br>
+**・飲食店評価閲覧**<br>
 ⇒マイページ、または飲食店一覧画面の飲食店カードの右下に表示される、星のアイコンをクリックいただくと、<br>
 　飲食店評価閲覧ページに遷移いたします。<br>
 ![Screenshot 2024-02-25 154240](https://github.com/tmdressage/rese/assets/144135026/4892b818-fb59-4ff0-8803-6b86f80c5010)<br>
 <br>
 <br>
-・バリデーション(認証／予約)<br>
+**・バリデーション**<br>
 ⇒ログイン時・会員登録時・飲食店予約時・飲食店予約変更時、飲食店評価時、店舗代表者作成時、<br>
 　飲食店情報作成時において、各々バリデーションを作成いたしました。<br>
 <br>
 <br>
-・店舗代表者作成 <br> 
+**・店舗代表者作成** <br> 
 ⇒システム管理者ユーザでログインいただくと、店舗代表者作成ページに遷移いたします。<br>
 メールアドレス：admin@example.co.jp<br>
 パスワード：PasswordPassword<br>
 ![Screenshot 2024-02-25 155332](https://github.com/tmdressage/rese/assets/144135026/1986e2ef-6975-41cb-85ca-876fa163b4d8)<br> 
 <br>
 <br>
-・飲食店情報作成<br>
+**・飲食店情報作成**<br>
 ⇒作成した店舗代表者ユーザでログインいただくと、飲食店情報作成ページに遷移いたします。<br>
 (初回ログイン時はメール認証から始まります)<br>
 ![Screenshot 2024-02-25 155838](https://github.com/tmdressage/rese/assets/144135026/46fc64b0-b4d7-4376-9017-2ff8d7cbb0cf)<br>
 <br>
 <br>
-・飲食店情報更新<br>
+**・飲食店情報更新**<br>
 ⇒新規で店舗情報を登録いただいた後は、同じフォームから上書き更新が出来ます。<br>
 ![Screenshot 2024-02-25 160415](https://github.com/tmdressage/rese/assets/144135026/058051d4-4765-4b35-8c87-a7a2d1f252d8)<br>
 <br>
 <br>
-・飲食店予約情報確認<br>
+**・飲食店予約情報確認**<br>
 ⇒店舗代表者ユーザで、ハンバーガーメニューのReservation Statusをクリックいただくと、<br>
 　飲食店予約情報確認ページに遷移いたします。<br>
 　まだ飲食店情報を登録していない場合は、飲食店情報登録画面へと飛ぶ仕様です。<br>
 ![Screenshot 2024-02-25 160447](https://github.com/tmdressage/rese/assets/144135026/e1e2053d-d2bc-4438-bec0-2b9e7985c750)<br>
 <br>
 <br>
-・飲食店画像のストレージ保存<br>
+**・飲食店画像のストレージ保存**<br>
 ⇒飲食店情報作成時に、画像をアップロードいただくと、サーバのstorage/app/public/img配下に画像が保存され、<br>
 　DBにもパスが格納されます。<br>
 　シンボリックリンクにより、出力時はパスを参照して保存した画像が表示されます。<br>
@@ -146,7 +146,7 @@ docker-compose.ymlと.envにmailhog用の設定を追加いたしました。
 ![Screenshot 2024-02-25 161043](https://github.com/tmdressage/rese/assets/144135026/25590e05-c9c7-425d-a671-f415e8f4403e)<br>
 <br>
 <br>
-・メール認証<br>
+**・メール認証**<br>
 ⇒メールの送信先は、開発用のメールサーバmailhogを使用しております。<br>
 　送信ボタンをクリックすると本人確認メールがmailhogに送信されます。<br>
 ![Screenshot 2024-02-25 143204](https://github.com/tmdressage/rese/assets/144135026/e37fe2b9-8321-4d51-8920-5172044e6dee)<br>
@@ -154,7 +154,7 @@ docker-compose.ymlと.envにmailhog用の設定を追加いたしました。
 ![Screenshot 2024-02-25 143344](https://github.com/tmdressage/rese/assets/144135026/c6fd0aa2-fed3-4067-9208-e6fc641e2879)<br>
 <br>
 <br>
-・予約当日リマインダー送信<br>
+**・予約当日リマインダー送信**<br>
 ⇒メールの送信先は、開発用のメールサーバmailhogを使用しております。<br>
 　app/Console/Commands/Batch.phpで予約日が当日のレコードを持つユーザ情報を抽出し、<br>
 　cronの設定とapp/Console/Kernel.phpで該当ユーザ宛に予約当日の朝8:00にリマインダーが<br>
