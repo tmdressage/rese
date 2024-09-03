@@ -91,9 +91,9 @@ $ mv rese 任意のディレクトリ名
 $ cd ⓵で作成したディレクトリ名
 $ git remote set-url origin ⓶で作成したリモートリポジトリのSSHのurl
 $ git remote -v
-<br>
-※リポジトリの紐付けが設定されていない場合は新規でurlを追加する<br>
-git remote add origin ⓶で作成したリモートリポジトリのSSHのurl<br>
+
+※リポジトリの紐付けが設定されていない場合は新規でurlを追加する
+git remote add origin ⓶で作成したリモートリポジトリのSSHのurl
 ```
 
 <br>
