@@ -92,6 +92,8 @@ $ cd ⓵で作成したディレクトリ名
 $ git remote set-url origin ⓶で作成したリモートリポジトリのSSHのurl
 $ git remote -v
 ```
+※リポジトリの紐付けが設定されていない場合は新規でurlを追加する
+git remote add origin ⓶で作成したリモートリポジトリのSSHのurl
 
 <br>
 ⓸ローカルリポジトリにあるデータを⓶で作成したリモートリポジトリに反映させる<br>
