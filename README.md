@@ -9,9 +9,6 @@
 
 # アプリケーション名
 Rese（飲食店予約サービス）
-
-## 作成した目的
-上級模擬案件提出用
  
 ## アプリケーションURL
 http://localhost/login<br>
@@ -21,9 +18,6 @@ http://localhost:8025<br>
 <br>
 ※PhpMyAdmin<br>
 http://localhost:8080/
-
-## 他のリポジトリ  
-無し
 
 ## 機能一覧
 **基本機能**<br>
@@ -70,7 +64,6 @@ WEBサーバソフトウェア：nginx 1.21.1<br>
 
 ## ER図
 ![Screenshot 2024-02-25 141811](https://github.com/tmdressage/rese/assets/144135026/46ee270d-2ae7-49af-96cd-5f8f414e2b5f)<br>
-※中間テーブルの名称につきましては、担当コーチに相談のもと上記の名称で作成しております。
 
 ## 環境構築
 **1、リポジトリの設定**<br>
@@ -78,10 +71,8 @@ WEBサーバソフトウェア：nginx 1.21.1<br>
 <br>
 <br>
 ⓵開発環境をGitHub からクローンする<br>
-※~/coachtechディレクトリ配下のlaravelディレクトリで作業を行う場合を想定して記載します。<br>
 ```
 コマンドライン上
-$ cd coachtech/laravel
 $ git clone git@github.com:tmdressage/rese.git
 $ mv rese 任意のディレクトリ名
 ```
@@ -340,8 +331,6 @@ Permission denied」<br>
 <br>
 **・店舗代表者作成** <br> 
 ⇒システム管理者ユーザでログインいただくと、店舗代表者作成ページに遷移いたします。<br>
-　メールアドレス：admin@example.co.jp<br>
-　パスワード：PasswordPassword<br>
 <br>
 ![Screenshot 2024-02-25 155332](https://github.com/tmdressage/rese/assets/144135026/1986e2ef-6975-41cb-85ca-876fa163b4d8)<br> 
 <br>
@@ -404,12 +393,3 @@ Permission denied」<br>
 <br>
 ![Screenshot 2024-02-25 161828](https://github.com/tmdressage/rese/assets/144135026/4c235f75-2145-47f1-9577-b9c6779a6c23)<br>
 <br>
-<br>
-<br>
-※その他の追加実装項目（レスポンシブデザイン、お知らせメール送信、QRコード、決済機能、AWS、<br>
-　環境の切り分け）は未実装です。
-<br>
-<br>
-<br>
-以上でございます。<br>
-拙い点が多々ございますが、ご採点の程よろしくお願い申し上げます。<br>
